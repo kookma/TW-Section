@@ -1,0 +1,9 @@
+created: 20211001140102474
+modified: 20211002082339159
+tags: $:/tags/ViewTemplate
+title: $:/plugins/kookma/section/templates/sections
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]has:field[se-type]]">
+<$macrocall $name=section-editor source=<<currentTiddler>> pattern="\n\!" />
+</$list>

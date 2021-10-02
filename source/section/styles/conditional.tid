@@ -1,0 +1,13 @@
+created: 20211001141824507
+modified: 20211002082339143
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/section/styles/conditional
+type: text/vnd.tiddlywiki
+
+\define assign-css()
+\rules only
+[data-tiddler-title="$(currentTiddler)$"] .tc-tiddler-body { display:none; }
+\end
+<$list filter="[all[tiddlers]has:field[se-type]]">
+<<assign-css>><br>
+</$list>

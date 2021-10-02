@@ -1,0 +1,11 @@
+.se-section{}
+.se-btn{
+	opacity:0;
+	margin-left:6px;
+}
+.se-section:hover .se-btn{
+	opacity:1;
+}
+
+.w-100{width:100%}
+.float-right{float:right}
