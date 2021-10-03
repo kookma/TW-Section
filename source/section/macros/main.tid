@@ -1,17 +1,17 @@
 created: 20211001130455666
-modified: 20211002103918041
+modified: 20211002150613946
 tags: $:/tags/Macro
 title: $:/plugins/kookma/section/macros/main
 type: text/vnd.tiddlywiki
 
 \define section-editor(source, pattern:"\n\!")
-\import $:/plugins/kookma/section/macros/process-sections
-\import $:/plugins/kookma/section/macros/settings
+\import [tag[$:/tags/Section/Macro]]
 <$vars source=<<__source__>> sourceText={{{[<__source__>get[text]]}}} pattern=<<__pattern__>> nonWhitespace="[^\s]" >
 <$list counter=counter variable=section
-       filter="[<sourceText>splitregexp<pattern>!is[blank]first[]regexp<nonWhitespace>]
-               [<sourceText>splitregexp<pattern>!is[blank]butfirst[]regexp<nonWhitespace>addprefix[!]]">
+       filter="[<sourceText>splitregexp<pattern>!is[blank]regexp<nonWhitespace>]">
 <div class="se-section"><<processSingleSection>></div>
 </$list>
 </$vars>
 \end
+
+

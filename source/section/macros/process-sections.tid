@@ -1,6 +1,6 @@
 created: 20211001132448596
-modified: 20211002082339131
-tags: show-content
+modified: 20211002154944059
+tags: $:/tags/Section/Macro
 title: $:/plugins/kookma/section/macros/process-sections
 type: text/vnd.tiddlywiki
 
@@ -42,7 +42,7 @@ type: text/vnd.tiddlywiki
 \define viewSection() <$transclude tiddler=<<section>> field=title mode="block"/>
 \define editSection()
 <$reveal type="nomatch" state=<<se-editor>> text="main-editor" default="simple-textarea">
-<$edit-text tiddler=<<editTid>> field="text" tag=textarea class="w-100"/>
+<$edit-text tiddler=<<editTid>> field="text" tag=textarea class="se-simple-textarea"/>
 </$reveal>
 <$reveal type="match" state=<<se-editor>> text="main-editor" default="simple-textarea">
 <$list filter="[<editTid>]" template="$:/plugins/kookma/section/ui/editor"/>

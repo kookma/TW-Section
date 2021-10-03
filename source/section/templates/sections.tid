@@ -1,10 +1,10 @@
 created: 20211001140102474
-modified: 20211002104036321
+modified: 20211002151107738
 tags: $:/tags/ViewTemplate
 title: $:/plugins/kookma/section/templates/sections
 type: text/vnd.tiddlywiki
 
-<$list filter="[all[current]has:field[se-type]]">
+<$list filter="[all[current]has:field[section]]">
 <$macrocall $name=section-editor source=<<currentTiddler>> pattern="\n(?=!{1,2}[^!])" />  
 </$list>
 <!-- generate sections only by first two levels -->

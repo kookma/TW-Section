@@ -1,5 +1,5 @@
 created: 20211001141824507
-modified: 20211002082339143
+modified: 20211003095727025
 tags: $:/tags/Stylesheet
 title: $:/plugins/kookma/section/styles/conditional
 type: text/vnd.tiddlywiki
@@ -8,6 +8,11 @@ type: text/vnd.tiddlywiki
 \rules only
 [data-tiddler-title="$(currentTiddler)$"] .tc-tiddler-body { display:none; }
 \end
-<$list filter="[all[tiddlers]has:field[se-type]]">
+<$list filter="[all[tiddlers]has:field[section]]">
+<<assign-css>><br>
+</$list>
+
+
+<$list filter="[all[tiddlers]has:field[htmltag]]">
 <<assign-css>><br>
 </$list>
