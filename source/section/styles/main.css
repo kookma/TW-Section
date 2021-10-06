@@ -1,6 +1,7 @@
 .se-section{ }
 .se-btn{
-	opacity:0;
+	opacity:1;
+	float:right;
 	margin-right:6px;
 }
 .se-section:hover .se-btn{
@@ -14,7 +15,4 @@
 	width:100%;
 	min-height: 40px;
 	resize: none; /* vertical user can resize vertically, but width is fixed */
-}
-.float-right{
-	float:right
 }

@@ -1,11 +1,11 @@
 created: 20211003184437127
-modified: 20211006075545384
+modified: 20211006100939425
 tags: $:/tags/Macro
 title: $:/plugins/kookma/section/macros/main
 type: text/vnd.tiddlywiki
 
 \define section-editor(source, pattern:"\n\!")
-\import [tag[$:/tags/Section/Macro]]
+\import [all[tiddlers+shadows]tag[$:/tags/Section/Macro]]
 <$vars source=<<__source__>> sourceText={{{[<__source__>get[text]]}}} pattern=<<__pattern__>> nonWhitespace="[^\s]" lbr="""
 """>
 <$list counter=counter variable=currentSection

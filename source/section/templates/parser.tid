@@ -1,6 +1,6 @@
 created: 20211005104853941
 hide-body: yes
-modified: 20211005123949612
+modified: 20211006102757920
 tags: 
 title: $:/plugins/kookma/section/templates/parser
 type: text/vnd.tiddlywiki
@@ -28,11 +28,11 @@ type: text/vnd.tiddlywiki
 
 <!-- Toggle and action buttons -->
 <$reveal type="nomatch" stateTitle=<<stateTid>> stateIndex=<<counter>> text="edit">
-    <$button actions=<<editActions>> class="tc-btn-invisible float-right se-btn">{{$:/core/images/edit-button}}</$button>
+    <$button actions=<<editActions>> class="tc-btn-invisible se-btn">{{$:/core/images/edit-button}}</$button>
 </$reveal>
 <$reveal type="match" stateTitle=<<stateTid>> stateIndex=<<counter>>  text="edit">
-    <$button actions=<<doneActions>>   class="tc-btn-invisible float-right se-btn">{{$:/core/images/done-button}}  </$button>
-    <$button actions=<<cancelActions>> class="tc-btn-invisible float-right se-btn">{{$:/core/images/cancel-button}}</$button>
+    <$button actions=<<doneActions>>   class="tc-btn-invisible se-btn">{{$:/core/images/done-button}}  </$button>
+    <$button actions=<<cancelActions>> class="tc-btn-invisible se-btn">{{$:/core/images/cancel-button}}</$button>
 </$reveal>
 
 <!-- Display section in edit or view mode -->
