@@ -1,0 +1,44 @@
+created: 20211005104853941
+hide-body: yes
+modified: 20211005123949612
+tags: 
+title: $:/plugins/kookma/section/templates/parser
+type: text/vnd.tiddlywiki
+
+\define editActions()
+<!-- action when edit button is clicked -->
+<$action-setfield $tiddler=<<stateTid>> $index=<<counter>> $value="edit" />
+<$action-setfield $tiddler=<<editTid>> $field=text $value=<<currentSection>> />
+\end
+
+\define doneActions()
+<!-- action when done button is clicked -->
+<$action-setfield $tiddler=<<stateTid>> $index=<<counter>> $value="view" />
+<$vars for=<<currentSection>> with={{{[<editTid>get[text]]}}}>
+<$action-setfield $tiddler=<<source>> $field=text $value={{{[<source>get[text]search-replace<for>,<with>]}}} />
+<$action-deletetiddler $tiddler=<<editTid>> />
+</$vars>
+\end
+
+\define cancelActions()
+<!-- action when cancel button is clicked -->
+<$action-setfield $tiddler=<<stateTid>> $index=<<counter>> $value="view" />
+<$action-deletetiddler $tiddler=<<editTid>> />
+\end
+
+<!-- Toggle and action buttons -->
+<$reveal type="nomatch" stateTitle=<<stateTid>> stateIndex=<<counter>> text="edit">
+    <$button actions=<<editActions>> class="tc-btn-invisible float-right se-btn">{{$:/core/images/edit-button}}</$button>
+</$reveal>
+<$reveal type="match" stateTitle=<<stateTid>> stateIndex=<<counter>>  text="edit">
+    <$button actions=<<doneActions>>   class="tc-btn-invisible float-right se-btn">{{$:/core/images/done-button}}  </$button>
+    <$button actions=<<cancelActions>> class="tc-btn-invisible float-right se-btn">{{$:/core/images/cancel-button}}</$button>
+</$reveal>
+
+<!-- Display section in edit or view mode -->
+<$reveal stateTitle=<<stateTid>> stateIndex=<<counter>> type="nomatch" text="edit">
+<$transclude tiddler="$:/plugins/kookma/section/templates/view" mode=block/>
+</$reveal>
+<$reveal stateTitle=<<stateTid>> stateIndex=<<counter>> type="match"   text="edit">
+<$transclude tiddler="$:/plugins/kookma/section/templates/edit" mode=block/>
+</$reveal>

@@ -1,11 +1,20 @@
-.se-section{}
+.se-section{ }
 .se-btn{
 	opacity:0;
-	margin-left:6px;
+	margin-right:6px;
 }
 .se-section:hover .se-btn{
 	opacity:1;
 }
 
-.se-simple-textarea{width:100%}
-.float-right{float:right}
+.se-simple-textarea{
+	margin-top: 6px; 
+	padding: 6px;
+	
+	width:100%;
+	min-height: 40px;
+	resize: none; /* vertical user can resize vertically, but width is fixed */
+}
+.float-right{
+	float:right
+}

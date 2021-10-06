@@ -1,0 +1,11 @@
+created: 20211001132448596
+modified: 20211005124248929
+tags: $:/tags/Section/Macro
+title: $:/plugins/kookma/section/macros/utility
+type: text/vnd.tiddlywiki
+
+\define se-config-visibility-toolbar() $:/config/se/config-visibility-toolbar
+\define se-editor()  $:/config/se/config-editor-type
+
+\define stateTid() xx$:/state/$(source)$
+\define editTid()  xx$:/content/$(source)$/$(counter)$ 

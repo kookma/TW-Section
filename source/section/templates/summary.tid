@@ -1,0 +1,15 @@
+created: 20211006062426339
+hide-body: yes
+modified: 20211006074457133
+tags: 
+title: $:/plugins/kookma/section/templates/summary
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+\define label() <$(hn)$><$text text={{{ [<heading>trim:prefix[!]] }}} /></$(hn)$>
+
+<$list variable=heading filter="[<currentSection>splitregexp[\n]!is[blank]first[]trim:prefix[]prefix[!]] ~[[Preface]]">
+<$set name=hn filter="[<heading>prefix[!!!]then[3]addprefix[h]] ~[<heading>prefix[!!]then[2]addprefix[h]] ~[<heading>prefix[!]then[1]addprefix[h]] ~[[span]]" ><summary><<label>></summary></$set>
+</$list>
+
+<!-- note the above solution only works for three first headings -->

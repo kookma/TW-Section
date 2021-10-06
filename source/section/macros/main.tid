@@ -1,17 +1,24 @@
-created: 20211001130455666
-modified: 20211002150613946
+created: 20211003184437127
+modified: 20211006075545384
 tags: $:/tags/Macro
 title: $:/plugins/kookma/section/macros/main
 type: text/vnd.tiddlywiki
 
 \define section-editor(source, pattern:"\n\!")
 \import [tag[$:/tags/Section/Macro]]
-<$vars source=<<__source__>> sourceText={{{[<__source__>get[text]]}}} pattern=<<__pattern__>> nonWhitespace="[^\s]" >
-<$list counter=counter variable=section
+<$vars source=<<__source__>> sourceText={{{[<__source__>get[text]]}}} pattern=<<__pattern__>> nonWhitespace="[^\s]" lbr="""
+""">
+<$list counter=counter variable=currentSection
        filter="[<sourceText>splitregexp<pattern>!is[blank]regexp<nonWhitespace>]">
-<div class="se-section"><<processSingleSection>></div>
+<div class="se-section"><!-- for future use -->
+<details class="se" open>
+<$transclude tiddler="$:/plugins/kookma/section/templates/summary" mode=inline/>  
+<$list variable=currentSection-NoHeading filter="[<currentSection>splitregexp[\n]butfirst[]join<lbr>]">
+<$list variable=currentSection-NoHeading filter="[<currentSection-NoHeading>!is[blank]regexp<nonWhitespace>then<currentSection-NoHeading>else<currentSection>]">
+<$transclude tiddler="$:/plugins/kookma/section/templates/parser" mode=block/>  
+</$list></$list>
+</details>
+</div>
 </$list>
 </$vars>
 \end
-
-

@@ -1,0 +1,17 @@
+created: 20211005104151321
+hide-body: yes
+modified: 20211005141628239
+tags: 
+title: $:/plugins/kookma/section/templates/edit
+type: text/vnd.tiddlywiki
+
+<$keyboard actions=<<doneActions>> key="ctrl+enter">
+<$keyboard actions=<<cancelActions>> key="escape">
+<$reveal type="nomatch" state=<<se-editor>> text="main-editor" default="simple-textarea">
+<$edit-text tiddler=<<editTid>> field="text" tag=textarea class="se-simple-textarea"/>
+</$reveal>
+<$reveal type="match" state=<<se-editor>> text="main-editor" default="simple-textarea">
+<$list filter="[<editTid>]" template="$:/plugins/kookma/section/ui/editor"/>
+</$reveal>
+</$keyboard>
+</$keyboard>
