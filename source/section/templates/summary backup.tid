@@ -1,17 +1,15 @@
-created: 20211006062426339
+created: 20211006124657535
 hide-body: yes
-modified: 20211006124747509
+modified: 20211006124704024
 tags: 
-title: $:/plugins/kookma/section/templates/summary
+title: $:/plugins/kookma/section/templates/summary backup
 type: text/vnd.tiddlywiki
 
 \whitespace trim
 \define label() <$(hn)$><$text text={{{ [<heading>trim:prefix[!]] }}} /></$(hn)$>
 
 <$list variable=heading filter="[<currentSection>splitregexp[\n]!is[blank]first[]trim:prefix[]prefix[!]] ~[[Preface]]">
-<$set name=hn filter="[<heading>search-replace::regexp[(^!*).*],[$1]length[]addprefix[h]]    ~[[span]]" ><summary><<label>></summary></$set>
+<$set name=hn filter="[<heading>prefix[!!!]then[3]addprefix[h]] ~[<heading>prefix[!!]then[2]addprefix[h]] ~[<heading>prefix[!]then[1]addprefix[h]] ~[[span]]" ><summary><<label>></summary></$set>
 </$list>
-
-
 
 <!-- note the above solution only works for three first headings -->
