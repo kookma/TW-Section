@@ -1,0 +1,13 @@
+.se-section details summary {list-style: none}
+.se-section details summary::-webkit-details-marker {display: none; }
+.se-section details summary{padding-left:0;}
+.se-section details[open] summary svg { transform: rotate(-90deg);}
+.se-section details summary svg {transition: all 0.3s;}
+.se-section details[open] summary{border-bottom:1px solid #ccc}
+.se-section details  svg {
+	vertical-align:top;
+	height: 1.5em;
+	width: 1.5em;
+}
+
+.se-section details div{margin:0.2rem}

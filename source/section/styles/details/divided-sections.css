@@ -1,16 +1,16 @@
-details.se[open] summary ~ * {
+.se-section details[open] summary ~ * {
 	animation: open 0.3s ease-in-out;
 }
 
-@keyframes .se open {
+@keyframes open {
 	0%   {opacity: 0;}
 	100% {opacity: 1;}
 }
-details.se summary::-webkit-details-marker {
+.se-section details summary::-webkit-details-marker {
 	display: none;
 }
 
-details.se summary {
+.se-section details summary {
 	width: 100%;
 	padding: 0.5rem 0;
 	border-top: 1px solid #ccc;
@@ -21,9 +21,9 @@ details.se summary {
 	list-style: none;
 }
 
-details.se summary:after {
+.se-section details summary:after {
 	content: "+";
-/*	color: black;*/
+	/*	color: black;*/
 	position: absolute;
 	font-size: 1.75rem;
 	line-height: 0;
@@ -33,17 +33,17 @@ details.se summary:after {
 	transform-origin: center;
 	transition: 200ms linear;
 }
-details.se[open] summary:after {
+.se-section details[open] summary:after {
 	transform: rotate(45deg);
 	font-size: 2rem;
 }
-details.se summary {
+.se-section details summary {
 	outline: 0;
 }
 /*
-details.se p {
-	font-size: 0.95rem;
-	margin: 0 0 1rem;
-	padding-top: 1rem;
+.se-section details p {
+font-size: 0.95rem;
+margin: 0 0 1rem;
+padding-top: 1rem;
 }
 */

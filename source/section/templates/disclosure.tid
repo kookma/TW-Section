@@ -1,0 +1,18 @@
+created: 20211007064243389
+hide-body: yes
+modified: 20211007151237200
+tags: 
+title: $:/plugins/kookma/section/templates/disclosure
+type: text/vnd.tiddlywiki
+
+<$vars linebreak="""
+"""><div class="se-section"><details open><$list filter="[<currentSection>splitregexp[\n]first[]]" variable=sectionHeader>
+<summary><$transclude tiddler="$:/plugins/kookma/section/templates/section-header" mode=inline/></summary>
+</$list><$list filter="[<currentSection>splitregexp[\n]rest[]join<linebreak>]  ~[[&nbsp;]]" variable=sectionBody>
+<$transclude tiddler="$:/plugins/kookma/section/templates/section-body" mode=block/>
+</$list></details></div></$vars>
+
+<!-- important note
+filter="[<currentSection>splitregexp[\n]rest[]join<linebreak>]  ~[[&nbsp;]]"
+The extra  ~[[&nbsp;]] address the issue: a single header line at the bottom doesn’t create a section icon.
+-->

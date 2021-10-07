@@ -1,7 +1,7 @@
 created: 20211005202417085
-modified: 20211005202428106
+modified: 20211007134942815
 tags: $:/tags/Macro
-title: $:/plugins/kookma/section/macros/detailst-arrow
+title: $:/plugins/kookma/section/images/detailst-arrow
 type: text/vnd.tiddlywiki
 
 \define detailst-arrow()

@@ -1,8 +1,8 @@
 created: 20211005104853941
 hide-body: yes
-modified: 20211006102757920
+modified: 20211007173509653
 tags: 
-title: $:/plugins/kookma/section/templates/parser
+title: $:/plugins/kookma/section/templates/section-body
 type: text/vnd.tiddlywiki
 
 \define editActions()
@@ -36,9 +36,9 @@ type: text/vnd.tiddlywiki
 </$reveal>
 
 <!-- Display section in edit or view mode -->
-<$reveal stateTitle=<<stateTid>> stateIndex=<<counter>> type="nomatch" text="edit">
+<$reveal stateTitle=<<stateTid>> stateIndex=<<counter>> type="nomatch" text="edit" tag=div class="se-sectionbody">
 <$transclude tiddler="$:/plugins/kookma/section/templates/view" mode=block/>
 </$reveal>
-<$reveal stateTitle=<<stateTid>> stateIndex=<<counter>> type="match"   text="edit">
+<$reveal stateTitle=<<stateTid>> stateIndex=<<counter>> type="match"   text="edit" tag=div class="se-sectionbody">
 <$transclude tiddler="$:/plugins/kookma/section/templates/edit" mode=block/>
 </$reveal>

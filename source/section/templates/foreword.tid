@@ -1,0 +1,9 @@
+created: 20211007055453257
+hide-body: yes
+modified: 20211007063740183
+tags: 
+title: $:/plugins/kookma/section/templates/foreword
+type: text/vnd.tiddlywiki
+
+<!-- display foreword without sectionizing -->
+<$transclude tiddler=<<currentSection>> field=title mode="block"/>

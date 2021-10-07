@@ -1,0 +1,7 @@
+created: 20211007112837487
+modified: 20211007202617657
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/section/styles/disclosure
+type: text/vnd.tiddlywiki
+
+<$transclude tiddler={{$:/plugins/kookma/section/configs}} field=text mode=block/>

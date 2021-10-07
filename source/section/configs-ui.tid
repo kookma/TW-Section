@@ -1,0 +1,21 @@
+created: 20211007202227459
+modified: 20211007210416668
+tags: 
+title: $:/plugins/kookma/section/configs-ui
+type: text/vnd.tiddlywiki
+
+;Disclosure stype: 
+:<$select tiddler="$:/plugins/kookma/section/configs" default=''>
+<$list filter='[all[shadows+tiddlers]prefix[$:/plugins/kookma/section/styles/details/]]'>
+<option value=<<currentTiddler>>><$view field='caption'/></option>
+</$list>
+</$select>
+
+
+
+;Number of levels: 
+:<$select tiddler="$:/plugins/kookma/section/configs-hn" default=''>
+<$list filter="[range[1,5]]">
+<option value=<<currentTiddler>>>From h1 to h<$view field='title'/></option>
+</$list>
+</$select>

@@ -1,0 +1,55 @@
+caption: 02 style
+created: 20211006184619759
+modified: 20211007203405198
+tags: 
+title: $:/plugins/kookma/section/styles/details/02
+type: text/vnd.tiddlywiki
+
+.se-section details summary {
+  list-style: none;
+	padding-left:5px; /*me*/
+
+}
+.se-section details summary::-webkit-details-marker {
+  display: none;
+}
+.se-section details {
+  user-select: none;
+}
+
+.se-section details[open] summary svg {
+  transform: rotate(-90deg);
+}
+
+.se-section details summary svg {
+  transition: all 0.3s;
+}
+.se-section details summary svg{ /*me*/
+width: 1.2em;
+height: 1.2em;
+vertical-align: middle;
+float:right;
+}
+
+.se-section details summary:focus {
+  outline: none;
+}
+
+.se-section details summary {
+  cursor: pointer;
+	font-weight: 900;
+	font-size:1.2em;	
+	padding:15px;
+	border-radius:3px;
+}
+
+.se-section details summary:hover {
+  background: <<colour page-background>>;
+}
+
+/* by Mohammad */
+.pw{
+    opacity: 0;
+    transition: opacity 400ms;
+}
+.wrapper:hover .pw{ opacity: 1; }

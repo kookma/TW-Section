@@ -1,6 +1,8 @@
-.se-section{ }
+.se-section{ /*wrapp a single section*/
+	margin-bottom:5px;
+} 
 .se-btn{
-	opacity:0;
+	opacity:0;  /* autohide the edit button on section */
 	float:right;
 	margin-right:6px;
 }
@@ -11,8 +13,12 @@
 .se-simple-textarea{
 	margin-top: 6px; 
 	padding: 6px;
-	
+
 	width:100%;
 	min-height: 40px;
 	resize: none; /* vertical user can resize vertically, but width is fixed */
+}
+
+.se-sectionbody {
+ margin-top:2.5rem; /* set distance to edit/done/cancel buttons*/
 }

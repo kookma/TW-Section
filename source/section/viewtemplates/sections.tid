@@ -1,8 +1,10 @@
 created: 20211001140102474
-modified: 20211005102501406
+modified: 20211007204701716
 tags: $:/tags/ViewTemplate
 title: $:/plugins/kookma/section/viewtemplates/sections
 type: text/vnd.tiddlywiki
+
+\define pattern() \n(?=!{1,$(hn)$}[^!])
 
 <$list filter="[all[current]has:field[se-type]]">
 
@@ -10,7 +12,9 @@ type: text/vnd.tiddlywiki
 
 <$list filter="[all[current]!has[plugin-type]!field:hide-body[yes]]" variable=NULL>
 
-<$macrocall $name=section-editor source=<<currentTiddler>> pattern="\n(?=!{1,2}[^!])" />  
+<$vars hn={{{ [[$:/plugins/kookma/section/configs-hn]get[text]else[2]] }}} > <!-- default number of headings 2 -->
+<$macrocall $name=section-editor source=<<currentTiddler>> pattern=<<pattern>> />
+</$vars>
 
 </$list>
 

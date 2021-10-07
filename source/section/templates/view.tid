@@ -1,8 +1,7 @@
 created: 20211005104214815
-hide-body: yes
-modified: 20211006055113479
+modified: 20211007091540180
 tags: 
 title: $:/plugins/kookma/section/templates/view
 type: text/vnd.tiddlywiki
 
-<$transclude tiddler=<<currentSection-NoHeading>> field=title mode="block"/>
+<$transclude tiddler=<<sectionBody>> field=title mode="block"/>

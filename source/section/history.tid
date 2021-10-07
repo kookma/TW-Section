@@ -1,11 +1,12 @@
 created: 20211001164139044
-modified: 20211005172016602
+modified: 20211006190948554
 tags: 
 title: $:/plugins/kookma/section/history
 type: text/vnd.tiddlywiki
 
 Full change log  https://kookma.github.io/TW-Section/#ChangeLog
 
+* ''0.2.7'' -- 2021.10.08 -- ....
 * ''0.2.4'' -- 2021.10.05 -- template instead of macros, section folding
 * ''0.2.3'' -- 2021.10.02 -- new regex, better styling
 * ''0.1.0'' -- 2021.09.30 -- prototype version

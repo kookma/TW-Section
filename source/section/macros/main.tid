@@ -1,24 +1,22 @@
-created: 20211003184437127
-modified: 20211006100939425
+created: 20211007081352943
+modified: 20211007093931507
 tags: $:/tags/Macro
 title: $:/plugins/kookma/section/macros/main
 type: text/vnd.tiddlywiki
 
-\define section-editor(source, pattern:"\n\!")
+\define section-editor(source, pattern:"")
 \import [all[tiddlers+shadows]tag[$:/tags/Section/Macro]]
-<$vars source=<<__source__>> sourceText={{{[<__source__>get[text]]}}} pattern=<<__pattern__>> nonWhitespace="[^\s]" lbr="""
+<$vars source=<<__source__>> 
+       sourceText={{{[<__source__>get[text]]}}} 
+			 pattern=<<__pattern__>> nonWhitespace="[^\s]" lbr="""
 """>
 <$list counter=counter variable=currentSection
        filter="[<sourceText>splitregexp<pattern>!is[blank]regexp<nonWhitespace>]">
-<div class="se-section"><!-- for future use -->
-<details class="se" open>
-<$transclude tiddler="$:/plugins/kookma/section/templates/summary" mode=inline/>  
-<$list variable=currentSection-NoHeading filter="[<currentSection>splitregexp[\n]butfirst[]join<lbr>]">
-<$list variable=currentSection-NoHeading filter="[<currentSection-NoHeading>!is[blank]regexp<nonWhitespace>then<currentSection-NoHeading>else<currentSection>]">
-<$transclude tiddler="$:/plugins/kookma/section/templates/parser" mode=block/>  
-</$list></$list>
-</details>
-</div>
+<$set name=seTemplate filter="[<currentSection>trim:prefix[]prefix[!]]" 
+      value="$:/plugins/kookma/section/templates/disclosure" 
+      emptyValue="$:/plugins/kookma/section/templates/foreword">
+  <$transclude tiddler=<<seTemplate>> mode=inline/>
+</$set>
 </$list>
 </$vars>
 \end
