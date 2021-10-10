@@ -1,18 +1,18 @@
 created: 20211001141824507
-modified: 20211005152439431
+modified: 20211009170950883
 tags: $:/tags/Stylesheet
 title: $:/plugins/kookma/section/styles/conditional
 type: text/vnd.tiddlywiki
+
+<!-- this conditional css tiddler is used to hide the body of those tiddlers have a `se-type`
+field. This solution shall be replcaed with better method once Tiddlywiki support hiding tiddler body in a more efficient way!
+-->
+
 
 \define assign-css()
 \rules only
 [data-tiddler-title="$(currentTiddler)$"] .tc-tiddler-body { display:none; }
 \end
-<$list filter="[all[tiddlers]has:field[se-type]]">
-<<assign-css>><br>
-</$list>
-
-
-<$list filter="[all[tiddlers]has:field[htmltag]]">
+<$list filter="[all[tiddlers]has:field[se-type]!field:hide-body[yes]]">
 <<assign-css>><br>
 </$list>

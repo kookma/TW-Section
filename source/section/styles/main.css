@@ -20,5 +20,20 @@
 }
 
 .se-sectionbody {
- margin-top:2.5rem; /* set distance to edit/done/cancel buttons*/
+ margin-top:0.5rem; /* set distance to edit/done/cancel buttons*/
 }
+
+/* Important */
+.se-section details summary {
+  cursor: pointer;
+}
+
+.se-section details summary > * {
+  display: inline;
+}
+
+/*
+.se-section details[open] {
+margin-bottom: 35px;
+}
+*/

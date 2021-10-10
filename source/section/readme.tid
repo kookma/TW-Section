@@ -1,11 +1,11 @@
 created: 20211001164011533
-modified: 20211003153948985
+modified: 20211010121457020
 tags: 
 title: $:/plugins/kookma/section/readme
 type: text/vnd.tiddlywiki
 
 ; Section Editor plugin
-: Edit, create, fold and manage a length, big tiddler in place by sections generated from html headings (h1, h2, ...)
+: Sectionize big tiddlers on headings, edit in place, create, fold and manage sections
 
 ; Code and demo
 For learning plugin features, syntax, tutorial and examples see the plugin demo and code pages

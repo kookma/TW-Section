@@ -1,6 +1,6 @@
 created: 20210930210542075
 hide-body: yes
-modified: 20211007130649687
+modified: 20211008141125743
 tags: 
 title: $:/plugins/kookma/section/ui/editor
 type: text/vnd.tiddlywiki
@@ -27,7 +27,7 @@ type: text/vnd.tiddlywiki
   text="yes"
 ><$list
 
-  filter="[all[shadows+tiddlers]tag[$:/tags/EditorToolbar]!has[draft.of]] -[[$:/core/ui/EditorToolbar/preview]] -[[$:/core/ui/EditorToolbar/preview-type]]"
+  filter="[all[shadows+tiddlers]tag[$:/tags/EditorToolbar]!has[draft.of]]"
 
 ><$reveal
 

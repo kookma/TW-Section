@@ -1,0 +1,36 @@
+created: 20211007202227459
+modified: 20211009200704247
+tags: 
+title: $:/plugins/kookma/section/ui/configs
+type: text/vnd.tiddlywiki
+
+\define selectMacro(title, filter, default, tiddler, field)
+<label class="kk-switch-label">$title$</label>
+<$select tiddler=<<__tiddler__>> field=<<__field__>> default="$default$">
+<$list filter=<<__filter__>> >
+<option value=<<currentTiddler>> >
+<$view field='caption'>
+  <$view field='title'/>
+</$view>
+</option>
+</$list>
+</$list>
+\end
+
+<$macrocall $name=selectMacro 
+  title="Section style" filter="[all[shadows+tiddlers]tag[$:/tags/Section/Style]sort[caption]]"
+	default="$:/plugins/kookma/section/styles/details/basic"
+	tiddler="$:/config/section-editor/style" field=text />
+	
+<$macrocall $name=selectMacro 
+  title="Number of levels" filter="[range[1,5]]"
+	default="2"
+	tiddler="$:/config/section-editor/hlevel" field=text /><br>
+
+
+<style>
+.kk-switch-label{
+  width:125px;
+  display: inline-block;
+}
+</style>	

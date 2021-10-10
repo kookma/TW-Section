@@ -1,7 +1,9 @@
 created: 20211007112837487
-modified: 20211007202617657
+modified: 20211009200600682
 tags: $:/tags/Stylesheet
 title: $:/plugins/kookma/section/styles/disclosure
 type: text/vnd.tiddlywiki
 
-<$transclude tiddler={{$:/plugins/kookma/section/configs}} field=text mode=block/>
+<$transclude tiddler="$:/plugins/kookma/section/styles/arrow" field=text mode=block/>
+
+<$transclude tiddler={{{ [[$:/config/section-editor/style]get[text]else[$:/plugins/kookma/section/styles/details/basic]] }}} field=text mode=block/>

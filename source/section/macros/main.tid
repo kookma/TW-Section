@@ -1,5 +1,5 @@
 created: 20211007081352943
-modified: 20211007093931507
+modified: 20211009165307387
 tags: $:/tags/Macro
 title: $:/plugins/kookma/section/macros/main
 type: text/vnd.tiddlywiki
@@ -8,7 +8,7 @@ type: text/vnd.tiddlywiki
 \import [all[tiddlers+shadows]tag[$:/tags/Section/Macro]]
 <$vars source=<<__source__>> 
        sourceText={{{[<__source__>get[text]]}}} 
-			 pattern=<<__pattern__>> nonWhitespace="[^\s]" lbr="""
+       pattern=<<__pattern__>> nonWhitespace="[^\s]" lbr="""
 """>
 <$list counter=counter variable=currentSection
        filter="[<sourceText>splitregexp<pattern>!is[blank]regexp<nonWhitespace>]">

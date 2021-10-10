@@ -1,6 +1,6 @@
 created: 20211005104151321
 hide-body: yes
-modified: 20211005141628239
+modified: 20211009143051658
 tags: 
 title: $:/plugins/kookma/section/templates/edit
 type: text/vnd.tiddlywiki
@@ -11,7 +11,10 @@ type: text/vnd.tiddlywiki
 <$edit-text tiddler=<<editTid>> field="text" tag=textarea class="se-simple-textarea"/>
 </$reveal>
 <$reveal type="match" state=<<se-editor>> text="main-editor" default="simple-textarea">
-<$list filter="[<editTid>]" template="$:/plugins/kookma/section/ui/editor"/>
+<$list filter="[<editTid>]" template="$:/plugins/kookma/section/ui/EditTemplate-body"/>
 </$reveal>
 </$keyboard>
 </$keyboard>
+<!--
+<$list filter="[<editTid>]" template="$:/plugins/kookma/section/ui/editor"/>
+-->

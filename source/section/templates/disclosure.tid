@@ -1,16 +1,15 @@
 created: 20211007064243389
 hide-body: yes
-modified: 20211007151237200
+modified: 20211010195410278
 tags: 
 title: $:/plugins/kookma/section/templates/disclosure
 type: text/vnd.tiddlywiki
 
+\define details-arrow() {{$:/plugins/kookma/section/images/details-arrow}}
 <$vars linebreak="""
 """><div class="se-section"><details open><$list filter="[<currentSection>splitregexp[\n]first[]]" variable=sectionHeader>
-<summary><$transclude tiddler="$:/plugins/kookma/section/templates/section-header" mode=inline/></summary>
-</$list><$list filter="[<currentSection>splitregexp[\n]rest[]join<linebreak>]  ~[[&nbsp;]]" variable=sectionBody>
-<$transclude tiddler="$:/plugins/kookma/section/templates/section-body" mode=block/>
-</$list></details></div></$vars>
+<summary><$transclude tiddler="$:/plugins/kookma/section/templates/section-header" mode=inline/> <<details-arrow>></summary>
+</$list><div><$list filter="[<currentSection>splitregexp[\n]rest[]join<linebreak>]  ~[[&nbsp;]]" variable=sectionBody template="$:/plugins/kookma/section/templates/section-body" /></div></details></div></$vars>
 
 <!-- important note
 filter="[<currentSection>splitregexp[\n]rest[]join<linebreak>]  ~[[&nbsp;]]"

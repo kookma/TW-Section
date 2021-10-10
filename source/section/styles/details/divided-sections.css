@@ -16,8 +16,8 @@
 	border-top: 1px solid #ccc;
 	position: relative;
 	cursor: pointer;
-	font-size: 1.25rem;
-	font-weight: 300;
+	/*	font-size: 1.25rem; 
+	font-weight: 300; */
 	list-style: none;
 }
 
@@ -47,3 +47,12 @@ margin: 0 0 1rem;
 padding-top: 1rem;
 }
 */
+
+/* by MIM*/
+.se-section details summary h1,
+.se-section details summary h2,
+.se-section details summary h3,
+.se-section details summary h4{
+	/*font-size: 1.5rem; 
+	font-weight: 300; */
+}

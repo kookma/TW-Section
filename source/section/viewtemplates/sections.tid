@@ -1,25 +1,28 @@
 created: 20211001140102474
-modified: 20211007204701716
+modified: 20211009200813410
 tags: $:/tags/ViewTemplate
 title: $:/plugins/kookma/section/viewtemplates/sections
 type: text/vnd.tiddlywiki
 
 \define pattern() \n(?=!{1,$(hn)$}[^!])
 
-<$list filter="[all[current]has:field[se-type]]">
-
 <$reveal tag="div" class="xtc-tiddler-body" type="nomatch" stateTitle=<<folded-state>> text="hide" retain="yes" animate="yes">
-
 <$list filter="[all[current]!has[plugin-type]!field:hide-body[yes]]" variable=NULL>
-
-<$vars hn={{{ [[$:/plugins/kookma/section/configs-hn]get[text]else[2]] }}} > <!-- default number of headings 2 -->
+<$list filter="[all[current]has:field[se-type]!field:hide-body[yes]]">
+<$vars hn={{{ [[$:/config/section-editor/hlevel]get[text]else[2]] }}} > <!-- default number of headings 2 -->
 <$macrocall $name=section-editor source=<<currentTiddler>> pattern=<<pattern>> />
 </$vars>
-
 </$list>
-
+</$list>
 </$reveal>
-<!-- generate sections only by first two levels -->
+
+<!-- generate sections only by all heading levels
+
+* Note to class="xtc-tiddler-body"
+** the current solution uses display none for `tc-tiddler-body` 
+** correct this when another mechnaism is found for not displaying the tiddlerbody
+* See our discussion here: https://talk.tiddlywiki.org/t/hide-tiddler-body/1049/27
+-->
 
 
 

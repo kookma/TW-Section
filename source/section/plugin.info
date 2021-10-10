@@ -3,7 +3,7 @@
     "name": "Section Editor",
     "description": "Create, edit, fold and manage tiddler sections created by headings",
     "author": "Mohammad Rahmani",
-    "version": "0.2.7",
+    "version": "0.5.0",
     "core-version": ">=5.2.0",
     "source": "https://github.com/kookma/TW-Section",
     "list": "readme license history",

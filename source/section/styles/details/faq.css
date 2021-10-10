@@ -13,7 +13,7 @@ div.se-section  + div.se-section  {
 }
 
 div.se-section {
-	border-bottom: 0.07em solid #ededed;
+	border-bottom: 0.07em solid #ededed;   /* has color (1)*/
 	padding: 1em 0em;
 } 
 
@@ -44,15 +44,13 @@ div.se-section:last-child {
 	-moz-user-select: none;
 	-ms-user-select: none; 
 	user-select: none;
-	transition: all 0.3s ease;
 }
 
 .se-section details[open] .se-sectionbody {
-	border-left: 2px solid red;
+	border-left: 2px solid #e31b1b;    /* has color (2)*/
 	margin-left: 40px;
 	padding-left: 25px;
 	opacity: 100;
-	transition: all 3s ease;
 }
 
 .se-section details[open] summary:after {
@@ -80,17 +78,5 @@ div.se-section:last-child {
 .se-section summary:hover,
 .se-section details[open] summary,
 .se-section summary:after {
-	color:#e31b1b;;    /* #e31b1b; */
+	color: #e31b1b;    /*original #e31b1b; */   /* has color (2)*/
 }
-
-
-/* animation is disabled
-.se-section details[open] .se-sectionbody {
-animation: sweep .5s ease-in-out;
-}
-
-@keyframes sweep {
-0%    {opacity: 0; margin-left: -10px}
-100%  {opacity: 1; margin-left: 40px}
-}
-*/

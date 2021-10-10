@@ -1,0 +1,25 @@
+.se-section details[open] summary {
+	border-bottom: 1px solid #aaa;
+	margin-bottom: .5em;
+}
+
+/*---*/
+.se-section details {
+	padding: 0.5em 1em;
+	border: 1px solid #aaa;
+	border-radius: 5px;
+}
+
+.se-section details > div {
+	background: white;
+	padding: 0.5em 0.7em;
+	border-radius: 5px;
+	font-size: 1em;
+	margin-top: 1em;
+}
+
+.se-section details summary {
+	font-weight: bold;
+	margin: -1em -1em 0;
+	padding: .5em;
+}
