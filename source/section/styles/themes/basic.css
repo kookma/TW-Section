@@ -1,0 +1,26 @@
+/*
+.se-article{}
+.se-section{}
+.se-sectionheader{}
+.se-sectionheader button{}
+.se-sectionheader button svg{}
+
+.se-section-toolbar {}
+.se-section-toolbar button{}
+
+/* edit-done-close(cancel)
+.se-section-toolbar .tc-image-button{}
+.se-section-toolbar .tc-image-edit-button{}
+.se-section-toolbar .tc-image-done-button {}
+.se-section-toolbar .tc-image-close-button{}
+
+
+.se-sectionbody{}
+.se-sectionbody .se-section-view{}
+.se-sectionbody .se-section-edit{}
+*/
+
+.se-sectionheader button{
+	border-bottom:1px solid #ccc;
+	padding-bottom: 3px;
+}

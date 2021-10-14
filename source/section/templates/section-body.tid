@@ -1,7 +1,7 @@
 created: 20211005104853941
 hide-body: yes
-modified: 20211007173509653
-tags: 
+modified: 20211014212940262
+tags: todo
 title: $:/plugins/kookma/section/templates/section-body
 type: text/vnd.tiddlywiki
 
@@ -27,18 +27,20 @@ type: text/vnd.tiddlywiki
 \end
 
 <!-- Toggle and action buttons -->
+<div class="se-section-toolbar">
 <$reveal type="nomatch" stateTitle=<<stateTid>> stateIndex=<<counter>> text="edit">
-    <$button actions=<<editActions>> class="tc-btn-invisible se-btn">{{$:/core/images/edit-button}}</$button>
+    <$button actions=<<editActions>> class="tc-btn-invisible">{{$:/core/images/edit-button}}</$button>
 </$reveal>
 <$reveal type="match" stateTitle=<<stateTid>> stateIndex=<<counter>>  text="edit">
-    <$button actions=<<doneActions>>   class="tc-btn-invisible se-btn">{{$:/core/images/done-button}}  </$button>
-    <$button actions=<<cancelActions>> class="tc-btn-invisible se-btn">{{$:/core/images/cancel-button}}</$button>
+    <$button actions=<<cancelActions>> class="tc-btn-invisible">{{$:/core/images/cancel-button}}</$button>
+    <$button actions=<<doneActions>>   class="tc-btn-invisible">{{$:/core/images/done-button}}  </$button>
 </$reveal>
+</div>
 
 <!-- Display section in edit or view mode -->
-<$reveal stateTitle=<<stateTid>> stateIndex=<<counter>> type="nomatch" text="edit" tag=div class="se-sectionbody">
+<$reveal stateTitle=<<stateTid>> stateIndex=<<counter>> type="nomatch" text="edit" tag=div class="se-section-view"> <!--todo: calss-->
 <$transclude tiddler="$:/plugins/kookma/section/templates/view" mode=block/>
 </$reveal>
-<$reveal stateTitle=<<stateTid>> stateIndex=<<counter>> type="match"   text="edit" tag=div class="se-sectionbody">
+<$reveal stateTitle=<<stateTid>> stateIndex=<<counter>> type="match"   text="edit" tag=div class="se-section-edit"> <!--todo: calss-->
 <$transclude tiddler="$:/plugins/kookma/section/templates/edit" mode=block/>
 </$reveal>

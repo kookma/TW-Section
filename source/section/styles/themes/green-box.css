@@ -1,0 +1,24 @@
+.se-section{
+    background: hsla(153, 48%, 49%, .1);
+    border: 1px solid hsla(162, 76%, 32%, .3);
+    /* color: hsl(162, 76%, 32%);*/
+    border-radius: 5px;
+}
+
+.se-section-toolbar button svg {
+	/*for future use */
+	fill:hsl(162, 76%, 32%);
+}
+
+.se-sectionheader button{ 
+    color: hsl(162, 76%, 32%);
+    font-weight: bold;
+
+}
+
+.se-sectionheader button svg {
+	/*for future use */
+	fill:hsl(162, 76%, 32%);
+}
+
+

@@ -1,5 +1,5 @@
 created: 20211007081352943
-modified: 20211009165307387
+modified: 20211014195105084
 tags: $:/tags/Macro
 title: $:/plugins/kookma/section/macros/main
 type: text/vnd.tiddlywiki
@@ -9,14 +9,14 @@ type: text/vnd.tiddlywiki
 <$vars source=<<__source__>> 
        sourceText={{{[<__source__>get[text]]}}} 
        pattern=<<__pattern__>> nonWhitespace="[^\s]" lbr="""
-""">
+"""><article class="se-article">
 <$list counter=counter variable=currentSection
        filter="[<sourceText>splitregexp<pattern>!is[blank]regexp<nonWhitespace>]">
 <$set name=seTemplate filter="[<currentSection>trim:prefix[]prefix[!]]" 
-      value="$:/plugins/kookma/section/templates/disclosure" 
+      value="$:/plugins/kookma/section/templates/section" 
       emptyValue="$:/plugins/kookma/section/templates/foreword">
   <$transclude tiddler=<<seTemplate>> mode=inline/>
 </$set>
 </$list>
-</$vars>
+</article></$vars>
 \end

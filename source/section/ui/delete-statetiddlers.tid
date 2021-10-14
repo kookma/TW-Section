@@ -1,0 +1,23 @@
+created: 20211014092557077
+modified: 20211014103901311
+tags: 
+title: $:/plugins/kookma/section/ui/delete-statetiddlers
+type: text/vnd.tiddlywiki
+
+\define confirmDelete()
+<$action-confirm $message="""Section Editor Warning
+Do you wish to delete $(numTids)$ state tiddlers?
+This will delete section drafts if any! Make sure to save them before delete""">
+<$list filter=<<statefilter>> >
+<$action-deletetiddler $tiddler=<<currentTiddler>> />
+</$list>
+</$action-confirm>
+\end
+
+<$vars statefilter="[all[tiddlers+shadows]prefix[$:/content/se]] [all[tiddlers+shadows]prefix[$:/state/se]] [all[tiddlers+shadows]prefix[$:/foldstate/se]]">
+<$vars numTids={{{ [subfilter<statefilter>count[]] }}} >
+<$vars disabledStatus={{{[<numTids>compare:number:eq[0]then[yes]else[no]]}}}>
+<$button actions=<<confirmDelete>> disabled=<<disabledStatus>> >{{$:/core/images/delete-button}} Delete state tiddlers </$button>
+</$vars>  There are <$text text=<<numTids>>/> state tiddlers.
+</$vars>
+</$vars>

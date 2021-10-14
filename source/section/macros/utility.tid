@@ -1,11 +1,18 @@
 created: 20211001132448596
-modified: 20211010163601425
+modified: 20211014073906849
 tags: $:/tags/Section/Macro
 title: $:/plugins/kookma/section/macros/utility
 type: text/vnd.tiddlywiki
 
+\define se-styleTid()    $:/config/section-editor/style-in-use
+\define se-hlevelTid()   $:/config/section-editor/hlevel
+
 \define se-config-visibility-toolbar() $:/config/section-editor/config-visibility-toolbar
 \define se-editor()  $:/config/section-editor/config-editor-type
+
+\define se-readermodeTid() $:/config/section-editor/reader-mode
+
 <!-- state and temporary tiddlers -->
-\define stateTid() $:/state/se/$(source)$
-\define editTid()  $:/content/se/$(source)$/$(counter)$ 
+\define stateTid()   $:/state/se/$(source)$
+\define editTid()    $:/content/se/$(source)$/$(counter)$ 
+\define statusTid()  $:/foldstate/se/$(source)$/$(counter)$ 

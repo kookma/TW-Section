@@ -1,0 +1,29 @@
+/*
+.se-section{}
+.se-sectionheader{}
+.se-sectionheader button{}
+.se-sectionheader button svg{}
+
+.se-sectionbody{}
+.se-sectionbody .se-section-view{}
+.se-sectionbody .se-section-edit{}
+*/
+
+
+.se-sectionheader button{ 
+	border-bottom:1px solid #aaa;
+	padding-bottom:3px;
+	justify-content: flex-end;
+	flex-direction: row-reverse;
+}
+.se-sectionheader button svg{
+	margin-right:8px;
+	width:1.1em;
+	height:1.1em;
+}
+.se-sectionheader button h1,
+.se-sectionheader button h2,
+.se-sectionheader button h3 {
+	font-weight:bold;
+	font-size:1.25em;	
+}

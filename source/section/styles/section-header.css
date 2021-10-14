@@ -1,0 +1,23 @@
+.se-sectionheader button{ 
+	width:100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content:space-between;
+}
+
+.se-sectionheader button svg {
+	/*for future use */
+	flex-shrink:0; /*keep svg size constant and not shrink*/
+}
+
+/* ? may be modified latter */
+.se-sectionheader button h1,
+.se-sectionheader button h2,
+.se-sectionheader button h3,
+.se-sectionheader button h4,
+.se-sectionheader button h5
+{
+	margin: 0;
+	padding:0;	
+	text-align:left; /* for very long heading*/
+}

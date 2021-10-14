@@ -1,0 +1,15 @@
+.se-section{
+	border: 1px solid #aaa;
+	border-radius: 5px;
+}
+
+.se-sectionheader button{}
+.se-sectionheader button svg{}
+
+.se-sectionbody{
+	border-top: 1px solid #aaa;
+	margin-left:  -8px;
+	margin-right: -8px; /* set from .se-section */
+	margin-top:4px;
+	padding:8px;
+}

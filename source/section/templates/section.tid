@@ -1,0 +1,29 @@
+created: 20211007064243389
+hide-body: yes
+modified: 20211014054234708
+tags: 
+title: $:/plugins/kookma/section/templates/section
+type: text/vnd.tiddlywiki
+
+\define toggleAction() <$action-listops $tiddler=<<statusTid>> $field="text" $subfilter="+[toggle[closed]]" />
+
+
+<$vars linebreak="""
+""">
+<section class="se-section">
+<header class="se-sectionheader">
+<$button actions=<<toggleAction>> class="tc-btn-invisible">
+<$list filter="[<currentSection>splitregexp[\n]first[]]" variable=sectionHeader template="$:/plugins/kookma/section/templates/section-header"/>
+<<details-marker>>
+</$button>
+</header>
+<$reveal type="nomatch" state=<<statusTid>> text="closed" tag=div class="se-sectionbody">
+<$list filter="[<currentSection>splitregexp[\n]rest[]join<linebreak>]  ~[[&nbsp;]]" variable=sectionBody template="$:/plugins/kookma/section/templates/section-body" />
+</$reveal>
+</section>
+</$vars>
+
+<!-- important note
+filter="[<currentSection>splitregexp[\n]rest[]join<linebreak>]  ~[[&nbsp;]]"
+The extra  ~[[&nbsp;]] address the issue: a single header line at the bottom doesn’t create a section icon.
+-->

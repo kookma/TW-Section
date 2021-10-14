@@ -1,11 +1,11 @@
 created: 20211006062426339
 hide-body: yes
-modified: 20211007085623464
+modified: 20211012102746000
 tags: 
 title: $:/plugins/kookma/section/templates/section-header
 type: text/vnd.tiddlywiki
 
 \whitespace trim
-\define header() <$(hn)$><$text text={{{ [<sectionHeader>trim:prefix[!]] }}} /></$(hn)$>
+\define header() <$(hn)$><$transclude tiddler={{{ [<sectionHeader>trim:prefix[!]] }}} field=title mode=inline/></$(hn)$>
 
 <$set name=hn filter="[<sectionHeader>search-replace::regexp[(^!*).*],[$1]length[]addprefix[h]]" ><<header>></$set>

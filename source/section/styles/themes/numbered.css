@@ -1,0 +1,44 @@
+.se-section {
+	border-bottom: 0.07em solid #ededed; 
+	padding: 0.25em 1em;
+} 
+
+.se-section:last-child {
+	border: initial;
+}
+
+.se-sectionheader button{ 
+	padding-bottom: 0px;
+	flex-direction: row;
+
+	justify-content: flex-start;
+
+}
+
+.se-sectionheader button svg{
+	display:none;
+}
+
+.se-sectionbody{
+	margin-left:25px;
+	margin-top:0px;
+}
+
+
+/* add number to section */
+
+.tc-tiddler-frame {
+	counter-reset: section;  /* Set a counter named 'section', and its initial value is 0. */
+}
+
+.se-article .se-sectionheader button::before {
+	counter-increment: section;      /* Increment the value of section counter by 1 */
+	content: counter(section, decimal-leading-zero) " ";
+	font-weight:bold;
+	font-size:1.25em;
+	color:lightsalmon;  /* lightsalmon, #e31b1b */
+	margin-right:25px;
+	margin-left:-10px;
+}
+
+

@@ -1,0 +1,54 @@
+/*
+.se-section{}
+.se-sectionheader{}
+.se-sectionheader button{}
+.se-sectionheader button svg{}
+
+.se-sectionbody{}
+.se-sectionbody .se-section-view{}
+.se-sectionbody .se-section-edit{}
+*/
+
+.se-sectionheader button{ 
+	padding-bottom: 8px;
+	justify-content: flex-end;
+	flex-direction: row-reverse;
+}
+.se-sectionheader button svg{
+	margin-right:8px;
+	width:1.4em;
+	height:1.4em;
+	fill: #e31b1b; 
+}
+
+
+.se-section {
+	border-bottom: 0.07em solid #ededed;   /* has color (1)*/
+	padding: 1em 0em;
+} 
+
+.se-section:last-child {
+	border: initial;
+}
+
+
+.se-sectionheader button h1,
+.se-sectionheader button h2,
+.se-sectionheader button h3,
+.se-sectionheader button h4,
+.se-sectionheader button h5 {
+	font-size: 1.4em;
+	font-weight: 500;
+}
+
+.se-section .se-sectionbody {
+	border-left: 2px solid #e31b1b;    /* has color (2)*/
+	margin-left: 40px;
+	padding-left: 25px;
+	opacity: 100;
+	padding-bottom:20px;
+}
+
+.se-sectionheader:hover button {
+    color: #e31b1b;
+}

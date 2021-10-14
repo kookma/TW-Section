@@ -1,0 +1,19 @@
+created: 20211013053546920
+modified: 20211014090421690
+tags: $:/tags/Section/Macro
+title: $:/plugins/kookma/section/macros/marker
+type: text/vnd.tiddlywiki
+
+\define details-marker()
+<$vars style-in-use={{{ [<se-styleTid>get[text]else[$:/plugins/kookma/section/styles/themes/basic]] }}} >
+<$vars marker-open={{{   [<style-in-use>get[marker-open]]   ~[[$:/core/images/down-arrow]]  }}}
+       marker-closed={{{ [<style-in-use>get[marker-closed]] ~[[$:/core/images/right-arrow]] }}} >
+<$transclude tiddler={{{ [<statusTid>get[text]match[closed]then<marker-closed>else<marker-open>]  }}} mode=inline />
+</$vars>
+</$vars>
+\end
+
+<!--
+$:/core/images/right-arrow
+$:/core/images/down-arrow
+-->

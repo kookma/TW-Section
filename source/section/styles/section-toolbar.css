@@ -1,0 +1,15 @@
+.se-section-toolbar {
+	/* set distance to edit/done/cancel buttons*/
+	width:100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content:flex-end;
+}
+
+.se-section-toolbar button{
+	opacity:0;  /* autohide the edit button on section */
+	margin-left:6px;
+}
+.se-section:hover .se-section-toolbar button{
+	opacity:1;
+}
