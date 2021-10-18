@@ -1,0 +1,9 @@
+created: 20211018154141491
+modified: 20211018202539132
+tags: show-content
+title: $:/plugins/kookma/section/templates/tiddler-header
+type: text/vnd.tiddlywiki
+
+<footer class="se-tiddler-header">
+<span><$link/></span><span>Modified on: <$view field=modified format=date template="DDth MMM YYYY"/></span>
+</footer>

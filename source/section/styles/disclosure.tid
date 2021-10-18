@@ -1,15 +1,23 @@
 created: 20211007112837487
-modified: 20211014090336632
+modified: 20211018171033492
 tags: $:/tags/Stylesheet
 title: $:/plugins/kookma/section/styles/disclosure
 type: text/vnd.tiddlywiki
 
 \import $:/plugins/kookma/section/macros/utility
 
-<$list filter="section section-header section-body section-toolbar textarea +[addprefix[$:/plugins/kookma/section/styles/]]"><$transclude/></$list>
+<$list filter="section section-header section-body section-toolbar textarea tiddler-header-footer +[addprefix[$:/plugins/kookma/section/styles/]]"><$transclude/></$list>
 
 <$transclude tiddler={{{ [<se-styleTid>get[text]else[$:/plugins/kookma/section/styles/themes/basic]] }}} field=text mode=block/>
 
 <$list filter="[<se-readermodeTid>get[text]match[yes]]" variale=null>
 <$transclude tiddler="$:/plugins/kookma/section/styles/reader" mode=block/>
+</$list>
+
+<$list filter="[<se-patchworkheaderTid>get[text]match[yes]]" variale=null>
+<$transclude tiddler="$:/plugins/kookma/section/styles/tiddler-header" mode=block/>
+</$list>
+
+<$list filter="[<se-patchworkfooterTid>get[text]match[yes]]" variale=null>
+<$transclude tiddler="$:/plugins/kookma/section/styles/tiddler-footer" mode=block/>
 </$list>

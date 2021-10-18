@@ -1,0 +1,28 @@
+.se-tiddler-header,
+.se-tiddler-footer {
+	/* set distance to edit/done/cancel buttons*/
+	width:100%;
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: center;
+	font-size: 80%;
+	font-weight: 300;
+	padding-left:8px;
+	padding-right:8px;
+}
+.se-tiddler-header span,
+.se-tiddler-footer span{
+	margin:0 3px;
+	border:1px solid #ccc;
+	border-radius:5px;
+	padding:0 4px;
+}
+.se-tiddler-header {justify-content:flex-start;}
+.se-tiddler-footer {
+	justify-content:flex-end;
+}
+
+.se-tiddler-footer span,
+.se-tiddler-footer span a{
+	background-color: #6c757d;
+	color:white;}

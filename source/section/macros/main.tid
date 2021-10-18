@@ -1,22 +1,25 @@
-created: 20211007081352943
-modified: 20211014195105084
-tags: $:/tags/Macro
+created: 20211018132909020
+modified: 20211018171152010
+tags: show-content
 title: $:/plugins/kookma/section/macros/main
 type: text/vnd.tiddlywiki
 
-\define section-editor(source, pattern:"")
-\import [all[tiddlers+shadows]tag[$:/tags/Section/Macro]]
-<$vars source=<<__source__>> 
-       sourceText={{{[<__source__>get[text]]}}} 
-       pattern=<<__pattern__>> nonWhitespace="[^\s]" lbr="""
-"""><article class="se-article">
-<$list counter=counter variable=currentSection
-       filter="[<sourceText>splitregexp<pattern>!is[blank]regexp<nonWhitespace>]">
-<$set name=seTemplate filter="[<currentSection>trim:prefix[]prefix[!]]" 
-      value="$:/plugins/kookma/section/templates/section" 
-      emptyValue="$:/plugins/kookma/section/templates/foreword">
-  <$transclude tiddler=<<seTemplate>> mode=inline/>
-</$set>
+\define pattern() \n(?=!{1,$(hn)$}[^!])
+
+\define sectionizeSingleTiddler(sourceTiddler)
+\import $:/plugins/kookma/section/macros/utility
+<$vars hn={{{ [<se-hlevelTid>get[text]else[2]] }}} > <!-- default level of headings 2 -->
+<$macrocall $name=section-editor source=<<__sourceTiddler__>> pattern=<<pattern>> />
+</$vars>
+\end
+
+
+\define sectionizePatchworkTiddler(sourceTiddler)
+<$vars patchfilter={{{ [<__sourceTiddler__>get[se-type]]  }}} >
+<$list filter="[subfilter<patchfilter>]">
+{{||$:/plugins/kookma/section/templates/tiddler-header}}
+<$macrocall $name=sectionizeSingleTiddler sourceTiddler=<<currentTiddler>> />
+{{||$:/plugins/kookma/section/templates/tiddler-footer}}
 </$list>
-</article></$vars>
+</$vars>
 \end

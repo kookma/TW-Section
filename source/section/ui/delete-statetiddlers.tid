@@ -1,5 +1,5 @@
 created: 20211014092557077
-modified: 20211014103901311
+modified: 20211015044643561
 tags: 
 title: $:/plugins/kookma/section/ui/delete-statetiddlers
 type: text/vnd.tiddlywiki
@@ -14,6 +14,7 @@ This will delete section drafts if any! Make sure to save them before delete""">
 </$action-confirm>
 \end
 
+<div style="padding:10px">
 <$vars statefilter="[all[tiddlers+shadows]prefix[$:/content/se]] [all[tiddlers+shadows]prefix[$:/state/se]] [all[tiddlers+shadows]prefix[$:/foldstate/se]]">
 <$vars numTids={{{ [subfilter<statefilter>count[]] }}} >
 <$vars disabledStatus={{{[<numTids>compare:number:eq[0]then[yes]else[no]]}}}>
@@ -21,3 +22,4 @@ This will delete section drafts if any! Make sure to save them before delete""">
 </$vars>  There are <$text text=<<numTids>>/> state tiddlers.
 </$vars>
 </$vars>
+</div>

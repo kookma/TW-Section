@@ -1,0 +1,9 @@
+created: 20211018153631868
+modified: 20211018204321699
+tags: show-content
+title: $:/plugins/kookma/section/templates/tiddler-footer
+type: text/vnd.tiddlywiki
+
+<footer class="se-tiddler-footer"><$list filter="[all[current]backlinks[]]" emptyMessage="">
+<span><$link/></span></$list>
+</footer>

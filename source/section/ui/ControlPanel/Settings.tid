@@ -1,7 +1,7 @@
 caption: Section Editor
 created: 20211009172215392
 list-after: $:/core/ui/ControlPanel/Settings/TiddlyWiki
-modified: 20211014103545914
+modified: 20211018170117242
 tags: $:/tags/ControlPanel/SettingsTab $:/tags/MoreSideBar
 title: $:/plugins/kookma/section/ui/ControlPanel/Settings
 type: text/vnd.tiddlywiki
@@ -27,12 +27,16 @@ Turn on editor toolbar</$checkbox>
 :<$checkbox tiddler=<<se-editor>> field="text" checked="simple-textarea" unchecked="main-editor" default="simple-textarea"> Use simple text area </$checkbox>
 
 ;Section appearance
-{{$:/plugins/kookma/section/ui/configs}}
+{{$:/plugins/kookma/section/ui/appearance}}
 
 ;Reader mode
 :<$checkbox tiddler=<<se-readermodeTid>> field="text" checked="yes" unchecked="" default="no"> Enable reader mode </$checkbox>
 
+;Patchwork tiddler
+:<$checkbox tiddler=<<se-patchworkheaderTid>> field="text" checked="yes" unchecked="" default="no"> Hide header </$checkbox>
+:<$checkbox tiddler=<<se-patchworkfooterTid>> field="text" checked="yes" unchecked="" default="no"> Hide footer </$checkbox>
+
 ---
 
-; Delete state tiddler
+; Delete state tiddlers
 :{{$:/plugins/kookma/section/ui/delete-statetiddlers}}

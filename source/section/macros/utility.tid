@@ -1,5 +1,5 @@
 created: 20211001132448596
-modified: 20211014073906849
+modified: 20211018203703066
 tags: $:/tags/Section/Macro
 title: $:/plugins/kookma/section/macros/utility
 type: text/vnd.tiddlywiki
@@ -12,7 +12,12 @@ type: text/vnd.tiddlywiki
 
 \define se-readermodeTid() $:/config/section-editor/reader-mode
 
+<!-- patchwork tiddler setting -->
+\define se-patchworkheaderTid() $:/config/section-editor/patchwork-header-mode
+\define se-patchworkfooterTid() $:/config/section-editor/patchwork-footer-mode
+
+
 <!-- state and temporary tiddlers -->
 \define stateTid()   $:/state/se/$(source)$
 \define editTid()    $:/content/se/$(source)$/$(counter)$ 
-\define statusTid()  $:/foldstate/se/$(source)$/$(counter)$ 
+\define foldstatusTid()  $:/foldstate/se/$(source)$/$(counter)$ 
