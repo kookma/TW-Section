@@ -1,5 +1,5 @@
 created: 20211001132448596
-modified: 20211018203703066
+modified: 20211020075619409
 tags: $:/tags/Section/Macro
 title: $:/plugins/kookma/section/macros/utility
 type: text/vnd.tiddlywiki
@@ -18,6 +18,6 @@ type: text/vnd.tiddlywiki
 
 
 <!-- state and temporary tiddlers -->
-\define stateTid()   $:/state/se/$(source)$
-\define editTid()    $:/content/se/$(source)$/$(counter)$ 
-\define foldstatusTid()  $:/foldstate/se/$(source)$/$(counter)$ 
+\define stateTid() $:/section-editor/state/$(source)$
+\define editTid()  $:/section-editor/content/$(source)$/$(counter)$ 
+\define foldstatusTid()  $:/section-editor/foldstate/$(source)$/$(counter)$ 

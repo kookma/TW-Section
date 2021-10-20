@@ -1,6 +1,6 @@
 created: 20211005104853941
 hide-body: yes
-modified: 20211014212940262
+modified: 20211020051259639
 tags: todo
 title: $:/plugins/kookma/section/templates/section-body
 type: text/vnd.tiddlywiki
@@ -11,11 +11,20 @@ type: text/vnd.tiddlywiki
 <$action-setfield $tiddler=<<editTid>> $field=text $value=<<currentSection>> />
 \end
 
+\define xxdoneActions()
+<!-- action when done button is clicked -->
+<$action-setfield $tiddler=<<stateTid>> $index=<<counter>> $value="view" />
+<$vars for=<<currentSection>> with={{{[<editTid>get[text]]}}}>
+<$action-setfield $tiddler=<<source>> $field=text $value={{{[<source>get[text]search-replace::regexp<for>,<with>]}}} />
+<$action-deletetiddler $tiddler=<<editTid>> />
+</$vars>
+\end
+
 \define doneActions()
 <!-- action when done button is clicked -->
 <$action-setfield $tiddler=<<stateTid>> $index=<<counter>> $value="view" />
 <$vars for=<<currentSection>> with={{{[<editTid>get[text]]}}}>
-<$action-setfield $tiddler=<<source>> $field=text $value={{{[<source>get[text]search-replace<for>,<with>]}}} />
+<$action-setfield $tiddler=<<source>> $field=text $value={{{[<source>get[text]split<for>join<with>]}}} />
 <$action-deletetiddler $tiddler=<<editTid>> />
 </$vars>
 \end
