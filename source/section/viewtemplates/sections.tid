@@ -1,5 +1,5 @@
 created: 20211015124638223
-modified: 20211018132247521
+modified: 20211021140603497
 tags: $:/tags/ViewTemplate
 title: $:/plugins/kookma/section/viewtemplates/sections
 type: text/vnd.tiddlywiki
@@ -7,24 +7,23 @@ type: text/vnd.tiddlywiki
 \import $:/plugins/kookma/section/macros/main
 \define filterpattern() ^\[.*\]$
 
-<$reveal tag="div" class="xtc-tiddler-body" type="nomatch" stateTitle=<<folded-state>> text="hide" retain="yes" animate="yes">
+
 <$list filter="[all[current]!has[plugin-type]!field:hide-body[yes]]" variable=NULL>
 <$list filter="[all[current]has:field[se-type]]"> 
-<$list filter="[all[current]] :filter[<currentTiddler>get[se-type]regexp<filterpatern>]" variable=compoundTid
+<$reveal tag="div" class="se-tc-tiddler-body" type="nomatch" stateTitle=<<folded-state>> text="hide" retain="yes" animate="yes">
+<$list filter="[all[current]] :filter[<currentTiddler>get[se-type]regexp<filterpatern>]" variable=patchworkTid
        emptyMessage="""<$macrocall $name=sectionizeSingleTiddler sourceTiddler=<<currentTiddler>> /> """ >
-  <$macrocall $name=sectionizePatchworkTiddler sourceTiddler=<<compoundTid>> />
-</$list>
-</$list>
+  <$macrocall $name=sectionizePatchworkTiddler sourceTiddler=<<patchworkTid>> />
 </$list>
 </$reveal>
+</$list>
+</$list>
+
 
 <!-- generate sections only by heading levels (h1, h2, h3, ...)
 
-* Note to class="xtc-tiddler-body"
+* Note to class="se-tc-tiddler-body"
 ** the current solution uses display none for `tc-tiddler-body` 
 ** correct this when another mechnaism is found for not displaying the tiddlerbody
 * See our discussion here: https://talk.tiddlywiki.org/t/hide-tiddler-body/1049/27
 -->
-
-
-

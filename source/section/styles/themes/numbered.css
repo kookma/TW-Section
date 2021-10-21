@@ -27,11 +27,11 @@
 
 /* add number to section */
 
-.tc-tiddler-frame {
+.se-tc-tiddler-body {
 	counter-reset: section;  /* Set a counter named 'section', and its initial value is 0. */
 }
 
-.se-article .se-sectionheader button::before {
+.se-sectionheader button::before {
 	counter-increment: section;      /* Increment the value of section counter by 1 */
 	content: counter(section, decimal-leading-zero) " ";
 	font-weight:bold;

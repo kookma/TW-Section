@@ -1,6 +1,6 @@
 created: 20211005104853941
 hide-body: yes
-modified: 20211020051259639
+modified: 20211021083419351
 tags: todo
 title: $:/plugins/kookma/section/templates/section-body
 type: text/vnd.tiddlywiki
@@ -12,6 +12,7 @@ type: text/vnd.tiddlywiki
 \end
 
 \define xxdoneActions()
+<!-- NOT WORKING: keep it and use when GitHub issue resolved -->
 <!-- action when done button is clicked -->
 <$action-setfield $tiddler=<<stateTid>> $index=<<counter>> $value="view" />
 <$vars for=<<currentSection>> with={{{[<editTid>get[text]]}}}>
@@ -31,8 +32,10 @@ type: text/vnd.tiddlywiki
 
 \define cancelActions()
 <!-- action when cancel button is clicked -->
+<$action-confirm $message="""Do you wish to discard changes to the current section in "$(currentTiddler)$" tiddler?""">
 <$action-setfield $tiddler=<<stateTid>> $index=<<counter>> $value="view" />
 <$action-deletetiddler $tiddler=<<editTid>> />
+</$action-confirm>
 \end
 
 <!-- Toggle and action buttons -->

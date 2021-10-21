@@ -1,10 +1,10 @@
 created: 20211007081352943
-modified: 20211018082906149
+modified: 20211021082014438
 tags: $:/tags/Macro
 title: $:/plugins/kookma/section/macros/sectionizer
 type: text/vnd.tiddlywiki
 
-\define section-editor(source, pattern:"")
+\define sectionizer(source, pattern:"")
 \import [all[tiddlers+shadows]tag[$:/tags/Section/Macro]]
 <$vars source=<<__source__>> 
        sourceText={{{[<__source__>get[text]]}}} 
