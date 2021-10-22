@@ -1,9 +1,9 @@
 {
     "title": "$:/plugins/kookma/section",
     "name": "Section Editor",
-    "description": "Create, edit, fold and manage tiddler sections created by headings",
+    "description": "Sectionize tiddler, create patchworks, and manage sections",
     "author": "Mohammad Rahmani",
-    "version": "0.9.3",
+    "version": "0.9.4",
     "core-version": ">=5.2.0",
     "source": "https://github.com/kookma/TW-Section",
     "list": "readme license history",
