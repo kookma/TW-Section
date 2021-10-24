@@ -6,5 +6,5 @@ Create patchwork tiddlers, to weave the fragments together to present narrative 
 ## Code and demo
 For learning plugin features, syntax, tutorial and examples see the plugin demo and code pages
 
-Demo: https://kookma.github.io/TW-Section/
-Code: https://github.com/kookma/TW-Section
+* Demo: https://kookma.github.io/TW-Section/
+* Code: https://github.com/kookma/TW-Section
