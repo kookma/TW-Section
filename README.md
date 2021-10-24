@@ -1,6 +1,10 @@
-# TW-Section
- create, edit and manage big and lengthy tiddlers through sectioning
+# Section Editor plugin
+Sectionize big tiddlers on headings, edit in place, create, fold and manage sections.
 
+Create patchwork tiddlers, to weave the fragments together to present narrative stories.
 
-## Demo and docs
-https://kookma.github.io/TW-Section/
+## Code and demo
+For learning plugin features, syntax, tutorial and examples see the plugin demo and code pages
+
+Demo: https://kookma.github.io/TW-Section/
+Code: https://github.com/kookma/TW-Section
