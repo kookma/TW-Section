@@ -1,0 +1,161 @@
+module-type: filteroperator
+tags: MyTiddlyWiki
+title: $:/plugins/kookma/section/filters/sectionsplit.js
+type: application/javascript
+
+// Creator: Gk0Wk(nmg_wk@yeah.net)
+// Description: Help spliting wiki text with hacked parser
+(function() {
+    "use strict";
+
+    function innerType(node, singleNode) {
+        var type;
+        if (node.type === 'element' && node.tag === 'section') type = 'section';
+        if (node.type === 'latex' && node.attributes && node.attributes.displayMode && node.attributes.displayMode.value === 'true') type = 'latex';
+        if (type !== undefined && (singleNode || node.to !== undefined)) return type;
+        return 'p';
+    }
+
+    // Hack the tw parser to add positions information
+    function hackParser() {
+        if (typeof $tw === 'undefined' || !$tw.Wiki || !$tw.Wiki.parsers) return undefined;
+        var originalParser = $tw.Wiki.parsers['text/vnd.tiddlywiki'];
+        if (typeof originalParser !== 'function') return undefined;
+        var newParser = function(text) {
+            this.sections = {
+                params: undefined,
+                blocks: [],
+            };
+            this.inBlock = false;
+            originalParser.call(this, 'text/vnd.tiddlywiki', text, {});
+        };
+        newParser.prototype = new originalParser('text/vnd.tiddlywiki', '', {});
+        newParser.prototype.parsePragmas_ = newParser.prototype.parsePragmas;
+        newParser.prototype.parsePragmas = function() {
+            var start = this.pos;
+            var tree = this.parsePragmas_();
+            if (start < this.pos) this.sections.params = {
+                to: this.pos,
+            };
+            return tree;
+        };
+        newParser.prototype.parseBlock_ = newParser.prototype.parseBlock;
+        newParser.prototype.parseBlock = function(terminatorRegExpString) {
+            if (this.inBlock) return this.parseBlock_(terminatorRegExpString);
+            var start = this.pos;
+            this.inBlock = true;
+            var children = this.parseBlock_(terminatorRegExpString);
+            this.inBlock = false;
+            if (start < this.pos && children.length > 0) {
+                var type = children[0].type === 'element' ? children[0].tag : children[0].type;
+                var that = this;
+                if (type === 'p' && children.length === 1) {
+                    var childType;
+                    if (children[0].children.length === 1) {
+                        childType = innerType(children[0].children[0], true);
+                        this.sections.blocks.push({
+                            to: this.pos,
+                            type: childType,
+                        });
+                    } else {
+                        $tw.utils.each(children[0].children, function(child) {
+                            childType = innerType(child, false);
+                            if (childType !== 'p') {
+                                that.sections.blocks.push({
+                                    to: child.from,
+                                    type: 'p',
+                                });
+                                that.sections.blocks.push({
+                                    to: child.to,
+                                    type: childType,
+                                });
+                                start = child.to;
+                            }
+                        });
+                        if (start < this.pos) this.sections.blocks.push({
+                            to: this.pos,
+                            type: 'p',
+                        });
+                    }
+                } else {
+                    this.sections.blocks.push({
+                        to: this.pos,
+                        type: type,
+                    });
+                }
+            }
+            return children;
+        };
+        return newParser;
+    }
+    var parser;
+    exports.sectionsplit = function(source, operator) {
+        if (!parser && !(parser = hackParser())) return [];
+        // Parse rules
+        var splitOptions = {};
+        var allOptions = false;
+        if (operator.operand.trim() === '') allOptions = true;
+        else $tw.utils.each(operator.operand.split('+'), function(option) {
+            option = option.trim().toLowerCase();
+            switch (option) {
+                case 'all':
+                    allOptions = true;
+                    break;
+                case 'p':
+                case 'ul':
+                    /* * item */
+                case 'ol':
+                    /* # item */
+                case 'dl':
+                    /* :/; item */
+                case 'tiddler':
+                    /* transclude */
+                case 'list':
+                    /* filteredtransclude */
+                case 'hr':
+                    /* horizontal */
+                case 'table':
+                case 'blockquote':
+                case 'codeblock':
+                case 'section':
+                case 'latex':
+                case 'h1':
+                case 'h2':
+                case 'h3':
+                case 'h4':
+                case 'h5':
+                case 'h6':
+                    splitOptions[option] = true;
+                    break;
+                case 'list':
+                    $tw.utils.each(['ul', 'ol', 'dl'], function(type) {
+                        splitOptions[type] = true;
+                    });
+                    break;
+                case 'h*':
+                    $tw.utils.each(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'], function(type) {
+                        splitOptions[type] = true;
+                    });
+                    break;
+            }
+            if (allOptions) return false;
+        });
+        var results = [];
+        source(function(tiddler_, title) {
+            var result = new parser(title);
+            console.log(result.sections);
+            // The first section must be params
+            results.push(result.sections.params ? result.source.substring(sections.params.from, sections.params.to) : '');
+            // Split sections
+            var start = result.sections.params ? result.sections.params.to : 0;
+            $tw.utils.each(result.sections.blocks, function(block) {
+                if (allOptions || splitOptions[block.type]) {
+                    if (start < block.to) results.push(result.source.substring(start, block.to));
+                    start = block.to;
+                }
+            });
+            if (start < result.source.length) results.push(result.source.substring(start));
+        });
+        return results;
+    };
+})();
