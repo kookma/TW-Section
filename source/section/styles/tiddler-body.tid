@@ -1,0 +1,18 @@
+created: 20211123164945721
+modified: 20211123173133323
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/section/styles/tiddler-body
+type: text/vnd.tiddlywiki
+
+\rules only filteredtranscludeinline transcludeinline
+
+/* set the font size like TW tc-tiddler-body */
+.se-tc-tiddler-body {
+	font-size:   {{$:/themes/tiddlywiki/vanilla/metrics/bodyfontsize}};
+	line-height: {{$:/themes/tiddlywiki/vanilla/metrics/bodylineheight}};
+}
+
+/*
+.se-tc-tiddler-body is equal to .tc-tiddler-body for non sectionized tiddlers.
+
+*/
