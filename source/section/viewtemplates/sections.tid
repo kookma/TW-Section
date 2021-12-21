@@ -1,15 +1,13 @@
 created: 20211015124638223
 list-after: $:/core/ui/ViewTemplate/body
-modified: 20211023193934732
-tags: $:/tags/ViewTemplate
+modified: 20211221131719666
+tags: show-content
 title: $:/plugins/kookma/section/viewtemplates/sections
 type: text/vnd.tiddlywiki
 
 \import $:/plugins/kookma/section/macros/main
 \define filterpattern() ^\[.*\]$
 
-
-<$list filter="[all[current]!has[plugin-type]!field:hide-body[yes]]" variable=NULL>
 <$list filter="[all[current]has:field[se-type]]"> 
 <$reveal tag="div" class="se-tc-tiddler-body" type="nomatch" stateTitle=<<folded-state>> text="hide" retain="yes" animate="yes">
 <$list filter="[all[current]] :filter[<currentTiddler>get[se-type]regexp<filterpatern>]" variable=patchworkTid
@@ -18,13 +16,8 @@ type: text/vnd.tiddlywiki
 </$list>
 </$reveal>
 </$list>
-</$list>
-
 
 <!-- generate sections only by heading levels (h1, h2, h3, ...)
 
-* Note to class="se-tc-tiddler-body"
-** the current solution uses display none for `tc-tiddler-body` 
-** correct this when another mechnaism is found for not displaying the tiddlerbody
-* See our discussion here: https://talk.tiddlywiki.org/t/hide-tiddler-body/1049/27
+Note: this view template works with cascade new filter operator and uses $:/config/ViewTemplateBodyFilters/Sections
 -->
