@@ -1,5 +1,5 @@
 created: 20211014092557077
-modified: 20211023193934696
+modified: 20211221141606390
 tags: 
 title: $:/plugins/kookma/section/ui/delete-statetiddlers
 type: text/vnd.tiddlywiki
@@ -15,7 +15,7 @@ This will delete section drafts if any! Make sure to save them before delete""">
 \end
 
 <div style="padding:10px">
-<$vars statefilter="[all[tiddlers+shadows]prefix[$:/section-editor/state/]] [all[tiddlers+shadows]prefix[$:/section-editor/content/]] [all[tiddlers+shadows]prefix[$:/section-editor/foldstate/]]">
+<$vars statefilter="[all[tiddlers+shadows]prefix[$:/section-editor/state/]] [all[tiddlers+shadows]prefix[$:/section-editor/content/]] [all[tiddlers+shadows]prefix[$:/temp/section-editor/foldstate/]]">
 <$vars numTids={{{ [subfilter<statefilter>count[]] }}} >
 <$vars disabledStatus={{{[<numTids>compare:number:eq[0]then[yes]else[no]]}}}>
 <$button actions=<<confirmDelete>> disabled=<<disabledStatus>> >{{$:/core/images/delete-button}} Delete state tiddlers </$button>
