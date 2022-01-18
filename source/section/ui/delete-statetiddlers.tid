@@ -15,7 +15,7 @@ This will delete section drafts if any! Make sure to save them before delete""">
 \end
 
 <div style="padding:10px">
-<$vars statefilter="[all[tiddlers+shadows]prefix[$:/section-editor/state/]] [all[tiddlers+shadows]prefix[$:/section-editor/content/]] [all[tiddlers+shadows]prefix[$:/temp/section-editor/foldstate/]]">
+<$vars statefilter="[all[tiddlers+shadows]prefix[$:/state/section-editor/]] [all[tiddlers+shadows]prefix[$:/section-editor/content/]] [all[tiddlers+shadows]prefix[$:/state/section-editor/foldstate/]]">
 <$vars numTids={{{ [subfilter<statefilter>count[]] }}} >
 <$vars disabledStatus={{{[<numTids>compare:number:eq[0]then[yes]else[no]]}}}>
 <$button actions=<<confirmDelete>> disabled=<<disabledStatus>> >{{$:/core/images/delete-button}} Delete state tiddlers </$button>
