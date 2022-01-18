@@ -7,8 +7,16 @@ type: text/vnd.tiddlywiki
 
 \define editActions()
 <!-- action when edit button is clicked -->
-<$action-setfield $tiddler=<<stateTid>> $index=<<counter>> $value="edit" />
-<$action-setfield $tiddler=<<editTid>> $field=text $value=<<currentSection>> />
+<!-- copy all field and tags to the edit state tiddler, so edit context will be exact the same -->
+<$action-createtiddler $basetitle=<<editTid>> $overwrite=yes $template=<<currentTiddler>> >
+    <!-- update the view state tiddler -->
+    <$action-setfield $tiddler=<<stateTid>> $index=<<counter>> $value="edit" />
+    <!-- update text of the edit state tiddler -->
+    <$action-setfield $tiddler=<<editTid>> $field=text $value=<<currentSection>> />
+    <!-- set draft title, maintain the edit context -->
+    <$action-setfield $tiddler=<<editTid>> $field="draft.of" $value={{{ [<currentTiddler>get[title]] }}} />
+    <$action-setfield $tiddler=<<editTid>> $field="draft.title" $value={{{ [<currentTiddler>get[title]] }}} />
+</$action-createtiddler>
 \end
 
 \define xxdoneActions()
