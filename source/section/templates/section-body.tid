@@ -14,7 +14,6 @@ type: text/vnd.tiddlywiki
     <!-- update text of the edit state tiddler -->
     <$action-setfield $tiddler=<<editTid>> $field=text $value=<<currentSection>> />
     <!-- set draft title, maintain the edit context -->
-    <$action-setfield $tiddler=<<editTid>> $field="draft.of" $value={{{ [<currentTiddler>get[title]] }}} />
     <$action-setfield $tiddler=<<editTid>> $field="draft.title" $value={{{ [<currentTiddler>get[title]] }}} />
 </$action-createtiddler>
 \end
