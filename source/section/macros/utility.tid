@@ -19,5 +19,5 @@ type: text/vnd.tiddlywiki
 
 <!-- state and temporary tiddlers -->
 \define stateTid() $:/state/section-editor/$(source)$
-\define editTid()  $:/section-editor/content/$(source)$/$(counter)$ 
+\define editTid()  $:/state/section-editor/content/$(source)$/$(counter)$ 
 \define foldstatusTid()  $:/state/section-editor/foldstate/$(source)$/$(counter)$ 
