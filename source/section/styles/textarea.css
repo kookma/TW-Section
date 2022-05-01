@@ -6,3 +6,6 @@
 	min-height: 40px;
 	resize: none; /* vertical user can resize vertically, but width is fixed */
 }
+
+/* for main editor when appears in the sidebar */
+/*.se-section-edit .tc-edit-texteditor { width:100%; }*/

@@ -1,6 +1,6 @@
 created: 20211015124638223
 list-after: $:/core/ui/ViewTemplate/body
-modified: 20211221131719666
+modified: 20220501183633270
 tags: show-content
 title: $:/plugins/kookma/section/viewtemplates/sections
 type: text/vnd.tiddlywiki
@@ -10,7 +10,7 @@ type: text/vnd.tiddlywiki
 
 <$list filter="[all[current]has:field[se-type]]"> 
 <$reveal tag="div" class="se-tc-tiddler-body" type="nomatch" stateTitle=<<folded-state>> text="hide" retain="yes" animate="yes">
-<$list filter="[all[current]] :filter[<currentTiddler>get[se-type]regexp<filterpatern>]" variable=patchworkTid
+<$list filter="[all[current]] :filter[<currentTiddler>get[se-type]regexp<filterpattern>]" variable=patchworkTid
        emptyMessage="""<$macrocall $name=sectionizeSingleTiddler sourceTiddler=<<currentTiddler>> /> """ >
   <$macrocall $name=sectionizePatchworkTiddler sourceTiddler=<<patchworkTid>> />
 </$list>

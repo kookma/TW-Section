@@ -1,11 +1,12 @@
 created: 20211005104151321
 hide-body: yes
-modified: 20211023193920880
+modified: 20220123161138669
 tags: 
 title: $:/plugins/kookma/section/templates/edit
 type: text/vnd.tiddlywiki
 
 <$keyboard actions=<<doneActions>> key="ctrl+enter">
+<$keyboard actions=<<doneActions>> key="meta+enter"><!-- support MacOS -->
 <$keyboard actions=<<cancelActions>> key="escape">
 <$reveal type="nomatch" state=<<se-editor>> text="main-editor" default="simple-textarea">
 <$edit-text tiddler=<<editTid>> field="text" tag=textarea class="se-simple-textarea"/>
@@ -13,6 +14,7 @@ type: text/vnd.tiddlywiki
 <$reveal type="match" state=<<se-editor>> text="main-editor" default="simple-textarea">
 <$list filter="[<editTid>]" template="$:/plugins/kookma/section/ui/EditTemplate-body"/>
 </$reveal>
+</$keyboard>
 </$keyboard>
 </$keyboard>
 <!--

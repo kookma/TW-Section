@@ -1,1 +1,0 @@
-[has:field[se-type]!field:hide-body[yes]then[$:/plugins/kookma/section/viewtemplates/sections]]

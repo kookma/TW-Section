@@ -1,7 +1,7 @@
 created: 20211001132448596
-modified: 20211221140955198
+modified: 20220123190613572
 tags: $:/tags/Section/Macro
-title: $:/plugins/kookma/section/macros/utility
+title: $:/plugins/kookma/section/macros/definition
 type: text/vnd.tiddlywiki
 
 \define se-styleTid()    $:/config/section-editor/style-in-use

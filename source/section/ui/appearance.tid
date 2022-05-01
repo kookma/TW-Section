@@ -1,10 +1,10 @@
 created: 20211007202227459
-modified: 20211023193934687
+modified: 20220123190613610
 tags: 
 title: $:/plugins/kookma/section/ui/appearance
 type: text/vnd.tiddlywiki
 
-\import $:/plugins/kookma/section/macros/utility
+\import $:/plugins/kookma/section/macros/definition
 
 \define selectMacro(title, filter, default, tiddler, field)
 <label class="kk-switch-label">$title$</label>

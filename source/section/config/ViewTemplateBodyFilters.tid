@@ -1,6 +1,8 @@
 created: 20211221104558216
 list-before: $:/config/ViewTemplateBodyFilters/system
-modified: 20211221133835940
+modified: 20211221143245369
 tags: $:/tags/ViewTemplateBodyFilter
 title: $:/plugins/kookma/section/config/ViewTemplateBodyFilters
-type: text/plain
+type: text/vnd.tiddlywiki
+
+[has:field[se-type]!field:hide-body[yes]then[$:/plugins/kookma/section/viewtemplates/sections]]

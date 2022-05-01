@@ -1,10 +1,10 @@
 created: 20211007112837487
-modified: 20211123172610967
+modified: 20220123190613610
 tags: $:/tags/Stylesheet
 title: $:/plugins/kookma/section/styles/disclosure
 type: text/vnd.tiddlywiki
 
-\import $:/plugins/kookma/section/macros/utility
+\import $:/plugins/kookma/section/macros/definition
 
 <$list filter="section section-header section-body section-toolbar textarea tiddler-header-footer +[addprefix[$:/plugins/kookma/section/styles/]]"><$transclude/></$list>
 

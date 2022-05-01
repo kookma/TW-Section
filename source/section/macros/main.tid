@@ -1,5 +1,5 @@
 created: 20211018132909020
-modified: 20211023193752046
+modified: 20220123190613609
 tags: show-content
 title: $:/plugins/kookma/section/macros/main
 type: text/vnd.tiddlywiki
@@ -7,7 +7,7 @@ type: text/vnd.tiddlywiki
 \define pattern() \n\s*(?=!{1,$(hn)$}[^!])
 
 \define sectionizeSingleTiddler(sourceTiddler)
-\import $:/plugins/kookma/section/macros/utility
+\import $:/plugins/kookma/section/macros/definition
 <$vars hn={{{ [<se-hlevelTid>get[text]else[2]] }}} > <!-- default level of headings 2 -->
 <$macrocall $name=sectionizer source=<<__sourceTiddler__>> pattern=<<pattern>> />
 </$vars>
