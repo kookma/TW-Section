@@ -1,6 +1,4 @@
-created: 20211008140454697
-hide-body: yes
-modified: 20211123191215237
+code-body: yes
 tags: 
 title: $:/plugins/kookma/section/ui/EditTemplate-body
 type: text/vnd.tiddlywiki
@@ -10,7 +8,9 @@ type: text/vnd.tiddlywiki
 <!-- added in section-editor -->
 \define edit-preview-state() $:/state/showeditpreview
 
-<!-- the below part exactly copied from $:/core/ui/EditTemplate/body/default -->
+<!-- the below part exactly copied from $:/core/ui/EditTemplate/body/default with two exceptions
+See two lines below in which this line changed: <$transclude tiddler="$:/plugins/kookma/section/ui/editor" mode="inline"/>
+-->
 
 \define config-visibility-title()
 $:/config/EditorToolbarButtons/Visibility/$(currentTiddler)$
@@ -25,7 +25,7 @@ $:/config/EditorToolbarButtons/Visibility/$(currentTiddler)$
 <$dropzone importTitle=<<importTitle>> autoOpenOnImport="no" contentTypesFilter={{$:/config/Editor/ImportContentTypesFilter}} class="tc-dropzone-editor" enable={{{ [{$:/config/DragAndDrop/Enable}match[no]] :else[subfilter{$:/config/Editor/EnableImportFilter}then[yes]else[no]] }}} filesOnly="yes" actions=<<importFileActions>> ><$reveal stateTitle=<<edit-preview-state>> type="match" text="yes">
 <div class="tc-tiddler-preview">
 
-<$transclude tiddler="$:/core/ui/EditTemplate/body/editor" mode="inline"/>
+<$transclude tiddler="$:/plugins/kookma/section/ui/editor" mode="inline"/><!--tiddler by kookma-->
 
 <div class="tc-tiddler-preview-preview">
 
@@ -42,7 +42,7 @@ $:/config/EditorToolbarButtons/Visibility/$(currentTiddler)$
 
 <$reveal stateTitle=<<edit-preview-state>> type="nomatch" text="yes">
 
-<$transclude tiddler="$:/core/ui/EditTemplate/body/editor" mode="inline"/>
+<$transclude tiddler="$:/plugins/kookma/section/ui/editor" mode="inline"/><!--tiddler by kookma-->
 
 </$reveal>
 </$dropzone>

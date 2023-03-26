@@ -1,7 +1,5 @@
 caption: Section Editor
-created: 20211009172215392
 list-after: $:/core/ui/ControlPanel/Settings/TiddlyWiki
-modified: 20220123190613611
 tags: $:/tags/ControlPanel/SettingsTab $:/tags/MoreSideBar
 title: $:/plugins/kookma/section/ui/ControlPanel/Settings
 type: text/vnd.tiddlywiki
