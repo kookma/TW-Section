@@ -4,6 +4,7 @@ type: text/vnd.tiddlywiki
 
 Full change log  https://kookma.github.io/TW-Section/#ChangeLog
 
+* ''1.1.2'' -- 2022.07.14 -- fix issue for refresh cycle of sections in edit mode
 * ''1.1.0'' -- 2022.05.01 -- update to TW 5.2.2 and fix minor bugs
 * ''1.0.1'' -- 2022.02.27 -- minor bug fixed
 * ''1.0.0'' -- 2021.12.22 -- first stable release 

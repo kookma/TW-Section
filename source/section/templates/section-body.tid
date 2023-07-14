@@ -6,7 +6,7 @@ type: text/vnd.tiddlywiki
 \define editActions()
 <!-- action when edit button is clicked -->
 <$action-setfield $tiddler=<<stateTid>> $index=<<counter>> $value="edit" />
-<$action-setfield $tiddler=<<editTid>> $field=text $value=<<currentSection>> />
+<$action-setfield $tiddler=<<editTid>> $field=text $value=<<currentSection>> throttle.refresh=""/>
 \end
 
 \define xxdoneActions()
