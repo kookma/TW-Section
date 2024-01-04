@@ -1,20 +1,27 @@
+code-body: yes
+created: 20231204010031507
+modified: 20240103230247559
 tags: $:/tags/Macro
 title: $:/plugins/kookma/section/macros/sectionizer
 type: text/vnd.tiddlywiki
 
 \define sectionizer(source, pattern:"")
 \import [all[tiddlers+shadows]tag[$:/tags/Section/Macro]]
-<$vars source=<<__source__>> 
+<$let source=<<__source__>> 
        sourceText={{{[<__source__>get[text]]}}} 
-       pattern=<<__pattern__>> nonWhitespace="[^\s]" lbr="""
+       splitChar={{{ [{!!type}match[text/markdown]then[#]] [[!]] +[first[]] }}}
+       pattern={{{[<splitChar>match[#]then<patternMD>else<__pattern__>] }}} 
+       nonWhitespace="[^\s]"
+       sourceType={{{[<__source__>get[type]]}}} 
+       lbr="""
 """><article class="se-article">
 <$list counter=counter variable=currentSection
        filter="[<sourceText>splitregexp<pattern>!is[blank]regexp<nonWhitespace>]">
-<$set name=seTemplate filter="[<currentSection>trim:prefix[]prefix[!]]" 
+<$set name=seTemplate filter="[<currentSection>trim:prefix[]prefix<splitChar>]" 
       value="$:/plugins/kookma/section/templates/section" 
       emptyValue="$:/plugins/kookma/section/templates/foreword">
   <$transclude tiddler=<<seTemplate>> mode=inline/>
 </$set>
 </$list>
-</article></$vars>
+</article></$let>
 \end
