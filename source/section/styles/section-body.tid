@@ -1,0 +1,22 @@
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/section/styles/section-body
+type: text/vnd.tiddlywiki
+
+\import $:/plugins/kookma/section/macros/definition
+
+.se-sectionbody {
+	/* set distance to edit/done/cancel buttons*/
+/*	margin-top:4.5rem;  */
+}
+
+/* show/hide main editor toolbar */
+<$list filter="[<se-config-visibility-toolbar>get[text]!match[yes]]">
+.se-tc-tiddler-body .tc-editor-toolbar{
+display:none;
+}
+</$list>
+
+/* reserved for future 
+.se-section-view{border:1px dotted purple;} <!--todo class -->
+.se-section-edit{border:1px dotted green;} <!--todo class -->
+*/

@@ -10,11 +10,8 @@ type: text/vnd.tiddlywiki
 <$edit-text tiddler=<<editTid>> field="text" tag=textarea class="se-simple-textarea"/>
 </$reveal>
 <$reveal type="match" state=<<se-editor>> text="main-editor" default="simple-textarea">
-<$list filter="[<editTid>]" template="$:/plugins/kookma/section/ui/EditTemplate-body"/>
+<$list filter="[<editTid>]" template="$:/core/ui/EditTemplate/body"/>
 </$reveal>
 </$keyboard>
 </$keyboard>
 </$keyboard>
-<!--
-<$list filter="[<editTid>]" template="$:/plugins/kookma/section/ui/editor"/>
--->

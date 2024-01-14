@@ -36,6 +36,7 @@ type: text/vnd.tiddlywiki
 </$action-confirm>
 \end
 
+\whitespace trim
 <!-- Toggle and action buttons -->
 <div class="se-section-toolbar">
 <$reveal type="nomatch" stateTitle=<<stateTid>> stateIndex=<<counter>> text="edit">

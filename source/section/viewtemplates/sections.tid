@@ -5,7 +5,6 @@ type: text/vnd.tiddlywiki
 
 \import $:/plugins/kookma/section/macros/main
 \define filterpattern() ^\[.*\]$
-
 <$list filter="[all[current]has:field[se-type]]"> 
 <$reveal tag="div" class="se-tc-tiddler-body" type="nomatch" stateTitle=<<folded-state>> text="hide" retain="yes" animate="yes">
 <$list filter="[all[current]] :filter[<currentTiddler>get[se-type]regexp<filterpattern>]" variable="patchworkTid"
