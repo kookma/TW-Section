@@ -1,0 +1,23 @@
+.se-simple-textarea{
+	/*margin-top: 6px; */
+	padding: 6px;
+
+	width:100%;
+	min-height: 40px;
+	resize: none; /* vertical user can resize vertically, but width is fixed */
+}
+
+/* for main editor when appears in the sidebar */
+.se-section-edit .tc-edit-texteditor { width:100%; }
+
+/* main editor toolbar settings for dynamic table */
+.se-section-edit .tc-editor-toolbar button svg{
+	height:0.9em;  /* make toolbar buttons smaller */
+	width:0.9em
+}
+
+/* make third party plugins like KaTeX button smaller */
+.se-section-edit  .tc-editor-toolbar button .katex{
+	font-size: 0.9em;
+	line-height:1em;
+}

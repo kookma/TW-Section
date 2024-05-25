@@ -3,7 +3,7 @@
     "name": "Section Editor",
     "description": "Sectionize tiddler, create patchworks, and manage sections",
     "author": "Mohammad Rahmani",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "core-version": ">=5.2.5",
     "source": "https://github.com/kookma/TW-Section",
     "list": "readme license history",

@@ -4,7 +4,7 @@ type: text/vnd.tiddlywiki
 
 \import $:/plugins/kookma/section/macros/definition
 
-<$list filter="section section-header section-body section-toolbar textarea tiddler-header-footer +[addprefix[$:/plugins/kookma/section/styles/]]"><$transclude/></$list>
+<$list filter="section section-header section-body section-toolbar editor tiddler-header-footer +[addprefix[$:/plugins/kookma/section/styles/]]"><$transclude/></$list>
 
 <$transclude tiddler={{{ [<se-styleTid>get[text]else[$:/plugins/kookma/section/styles/themes/basic]] }}} field=text mode=block/>
 
