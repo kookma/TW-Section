@@ -1,6 +1,8 @@
 code-body: yes
+created: 20231204202854683
+modified: 20240103230726844
 tags: 
 title: $:/plugins/kookma/section/templates/view
 type: text/vnd.tiddlywiki
 
-<$transclude tiddler=<<sectionBody>> field=title mode="block"/>
+<$wikify text=<<sectionBody>> type={{!!type}} mode="block" name="OUT" output="html"><<OUT>></$wikify>

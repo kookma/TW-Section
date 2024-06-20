@@ -1,10 +1,13 @@
 code-body: yes
+created: 20231204222018230
+modified: 20240103225948105
 tags: 
 title: $:/plugins/kookma/section/macros/main
 type: text/vnd.tiddlywiki
 
 \define pattern() \n\s*(?=!{1,$(hn)$}[^!])
-
+\define patternMD() \n\s*(?=#{1,$(hn)$}[^#])
+ 
 \define sectionizeSingleTiddler(sourceTiddler)
 \import $:/plugins/kookma/section/macros/definition
 <$vars hn={{{ [<se-hlevelTid>get[text]else[2]] }}} > <!-- default level of headings 2 -->

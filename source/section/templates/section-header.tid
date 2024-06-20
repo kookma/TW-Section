@@ -1,11 +1,13 @@
 code-body: yes
+created: 20231204221309235
+modified: 20240103230528721
 tags: 
 title: $:/plugins/kookma/section/templates/section-header
 type: text/vnd.tiddlywiki
 
 \whitespace trim
-\define header() <$(hn)$><$transclude tiddler={{{ [<sectionHeader>trim:prefix[]trim:prefix[!]] }}} field=title mode=inline/></$(hn)$>
-
-<$set name=hn filter="[<sectionHeader>trim:prefix[]search-replace::regexp[(^!*).*],[$1]length[]addprefix[h]]" ><<header>></$set>
+\define header() <$(hn)$><$transclude tiddler={{{ [<sectionHeader>trim:prefix[]trim:prefix<splitChar>] }}} field=title mode=inline/></$(hn)$>
+\define regCharSplit() (^$(splitChar)$*).*
+<$set name=hn filter="[<sectionHeader>trim:prefix[]search-replace::regexp<regCharSplit>,[$1]length[]addprefix[h]]" ><<header>>
 
 <!-- the trim:prefix[] handles the extra leading spaces, tabs for any heading -->
