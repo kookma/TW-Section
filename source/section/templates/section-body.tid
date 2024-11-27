@@ -1,4 +1,6 @@
 code-body: yes
+created: 20231204173139849
+modified: 20240103230046617
 tags: todo
 title: $:/plugins/kookma/section/templates/section-body
 type: text/vnd.tiddlywiki
@@ -6,7 +8,10 @@ type: text/vnd.tiddlywiki
 \define editActions()
 <!-- action when edit button is clicked -->
 <$action-setfield $tiddler=<<stateTid>> $index=<<counter>> $value="edit" />
-<$action-setfield $tiddler=<<editTid>> $field=text $value=<<currentSection>> throttle.refresh=""/>
+<$action-setfield $tiddler=<<editTid>> $field=text $value=<<currentSection>>
+    type=<<sourceType>> 
+test="I was here"
+ throttle.refresh=""/>
 \end
 
 \define xxdoneActions()
